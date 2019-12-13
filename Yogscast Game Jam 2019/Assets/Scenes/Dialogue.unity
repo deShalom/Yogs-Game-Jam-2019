@@ -526,12 +526,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 390420283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f56e5a3ce057e94f81b9a21742324ba, type: 3}
+  m_Script: {fileID: 11500000, guid: bddb697f3f03bb140a35cf177511a876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   conversationOptions:
-  - SOMETEXTSOMETEXTSOMETEXTSOMETEXTSOMETEXT
-  - SOMETEXTSOMETEXTSOMETEXTSOMETEXTSOMETEXTSOMETEXTSOMETEXT
+  - SOMETEXTSOMETEXTSOMETEXTSOMETEXTSOMETEXTSOMETEXT
+  - SOMETEXTSOMETEXTSOMETEXTSOMETEXTSOMETEXTSOMETEXT
   option1: {fileID: 237614169}
   option2: {fileID: 1840858446}
   currentDisplayedText: {fileID: 705072489}
