@@ -6,6 +6,7 @@ public class DayCycles : MonoBehaviour
 {
     public int Days = 12;
     public int nOfViewers = 10;
+    public int nOfViewersCounter;
     private bool viewingDone;
 
     void Start()
@@ -20,12 +21,13 @@ public class DayCycles : MonoBehaviour
 
     void ViewerCycle()
     {
-        while(nOfViewers >= 1)
+        while(nOfViewersCounter >= 1)
         {
             //Insert code here to execute viewer.
             LaunchViewing();
             if (nOfViewers == 0)
             {
+                DayComplete();
                 break;
             }
         }
@@ -35,6 +37,13 @@ public class DayCycles : MonoBehaviour
     {
         Days = Days - 1;
         nOfViewers = nOfViewers++;
+        nOfViewersCounter = nOfViewers;
+        ViewerCycle();
+
+        if (Days == 0)
+        {
+            //Execute game over code here.
+        }
     }
 
     void LaunchViewing()
@@ -50,6 +59,7 @@ public class DayCycles : MonoBehaviour
     void ViewingComplete()
     {
         //Inster code here to complete a viewing.
+        ViewerCycle();
     }
 }
 //All code written by Jay Underwood (deShalom).
