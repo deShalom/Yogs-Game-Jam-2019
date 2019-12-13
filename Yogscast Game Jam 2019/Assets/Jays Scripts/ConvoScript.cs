@@ -9,14 +9,9 @@ public class ConvoScript : MonoBehaviour
     private string mainCurrentText;
     public Button option1, option2;
 
-    public float audioSourceVolume;
-
 
     public Text currentDisplayedText, questionOption1, questionOption2;
     public GameObject questionsPanel;
-
-    [SerializeField] public AudioClip[] s_Slap, s_Kick, s_Gift;
-    private AudioSource audioSource;
 
 
 
@@ -30,8 +25,6 @@ public class ConvoScript : MonoBehaviour
     {
         mainCurrentText = "There is some textxtxttxtxtxttxtxtxt";
         StartNewConversation();
-        audioSource = GetComponent<AudioSource>();
-        audioSource.volume = audioSourceVolume;
     }
 
     public void StartNewConversation()
@@ -47,20 +40,17 @@ public class ConvoScript : MonoBehaviour
 
     public void KickPerson()
     {
-        PlaySound(s_Kick[Random.Range(0, s_Kick.Length)]);
-        //Kick logic
+
     }
 
     public void SlapPerson()
     {
-        PlaySound(s_Slap[Random.Range(0, s_Slap.Length)]);
-        //Slap logic
+
     }
 
     public void Gift()
     {
-        PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
-        //Gift logic
+
     }
 
     public void QuestionsToggle()
@@ -88,12 +78,6 @@ public class ConvoScript : MonoBehaviour
 
         QuestionsToggle();
 
-    }
-
-    private void PlaySound(AudioClip clip)
-    {
-        audioSource.clip = clip;
-        audioSource.Play();
     }
     
 }

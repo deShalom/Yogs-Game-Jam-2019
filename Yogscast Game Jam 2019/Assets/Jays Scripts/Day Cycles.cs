@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class DayCycles : MonoBehaviour
 {
-    //Variables
     public int Days = 12;
     public int nOfViewers = 10;
     public int nOfViewersCounter;
     private bool viewingDone;
 
-    //Methods
     void Start()
     {
         ViewerCycle();
