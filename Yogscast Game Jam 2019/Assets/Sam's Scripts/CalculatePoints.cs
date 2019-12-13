@@ -6,15 +6,19 @@ using UnityEngine.UI;
 
 public class CalculatePoints : MonoBehaviour
 {
-    int NumberOfBadKidsKicked = 2;
+    int NumberOfBadKidsKicked = 6;
     int NumberOfGoodKidsGifted = 3;
-    int NumberOfBadKidsGifted = 1;
+    int NumberOfBadKidsGifted = 0;
     int NumberOfGoodKidsKicked = 1;
     int TotalPoints;
     public Text points;
     public Text speedText;
     public Button speedButton;
-    
+    public Text kickText;
+    public Button kickButton;
+    public Text extraDText;
+    public Button extraDButton;
+
     void Start()
     {
         CalcPoints();
@@ -37,9 +41,34 @@ public class CalculatePoints : MonoBehaviour
 
     public void SpeedPurchase()
     {
-        speedText.text = "Sold Out!";
-        speedButton.interactable = false;
-        TotalPoints -= 30;
-        UpdatePoints();
+        if (TotalPoints >= 30)
+        {
+            speedText.text = "Sold Out!";
+            speedButton.interactable = false;
+            TotalPoints -= 30;
+            UpdatePoints();
+        }
+    }
+
+    public void BootPurchase()
+    {
+        if (TotalPoints >= 60)
+        {
+            kickText.text = "Sold Out!";
+            kickButton.interactable = false;
+            TotalPoints -= 60;
+            UpdatePoints();
+        }
+    }
+
+    public void ExtraDay()
+    {
+        if (TotalPoints >= 120)
+        {
+            extraDText.text = "Sold Out!";
+            extraDButton.interactable = false;
+            TotalPoints -= 120;
+            UpdatePoints();
+        }
     }
 }
