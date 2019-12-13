@@ -13,6 +13,6 @@ public class Scrolling : MonoBehaviour
     {
         float offsetX = Time.time * scollX;
         float offsetY = Time.time * scollY;
-        GetComponent<Image>().material.mainTextureOffset = new Vector2(offsetX, offsetY);
+        GetComponent<Renderer>().material.mainTextureOffset = new Vector2(offsetX, offsetY);
     }
 }
