@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ConvoScript : MonoBehaviour
 {
     public string[] conversationOptions;
+    private string mainCurrentText;
     public Button option1, option2;
 
 
@@ -22,6 +23,7 @@ public class ConvoScript : MonoBehaviour
 
     private void Start()
     {
+        mainCurrentText = "There is some textxtxttxtxtxttxtxtxt";
         StartNewConversation();
     }
 
@@ -31,6 +33,8 @@ public class ConvoScript : MonoBehaviour
         //Set text and convo options
         questionOption1.text = conversationOptions[0];
         questionOption2.text = conversationOptions[1];
+
+        currentDisplayedText.text = mainCurrentText;
         //
     }
 
