@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class ConvoScript : MonoBehaviour
 {
     public string[] conversationOptions;
+    private string currentMainText;
     public Button option1, option2;
 
     public float audioSourceVolume;
@@ -27,6 +28,7 @@ public class ConvoScript : MonoBehaviour
 
     private void Start()
     {
+        currentMainText = "some texttxtxtxttxtxttxttxtxtxtxttxt";
         StartNewConversation();
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = audioSourceVolume;
@@ -36,8 +38,10 @@ public class ConvoScript : MonoBehaviour
     {
         //Show character
         //Set text and convo options
+        //currentMainText = text from file;
         questionOption1.text = conversationOptions[0];
         questionOption2.text = conversationOptions[1];
+        currentDisplayedText.text = currentMainText;
         //
     }
 
