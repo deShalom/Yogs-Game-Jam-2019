@@ -32,6 +32,8 @@ public class ConvoScript : MonoBehaviour
             diceText.gameObject.SetActive(true);
             //Time that the dice remains on screen
             diceTimer = 1.5f;
+            //Play sound
+            PlaySound(s_Kick[Random.Range(0, s_Kick.Length)]);
         }
         if(diceTimer > 0f)
         {
@@ -83,7 +85,7 @@ public class ConvoScript : MonoBehaviour
 
     public void KickPerson()
     {
-        PlaySound(s_Kick[Random.Range(0, s_Kick.Length)]);
+
         //Kick logic
         //Roll d20 for damage
         var newRoll = RollD20();
