@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ConstantRotate : MonoBehaviour
 {
+    [SerializeField]
+    private float speedX, speedY, speedZ;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +15,13 @@ public class ConstantRotate : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        transform.Rotate(20f * Time.deltaTime, 20f * Time.deltaTime, 20f * Time.deltaTime);
+
+
+        //
+        if (transform.localScale.x < 1f)
+        {
+            transform.Rotate(speedX * Time.deltaTime, speedY * Time.deltaTime, speedZ * Time.deltaTime);
+        }
+
     }
 }
