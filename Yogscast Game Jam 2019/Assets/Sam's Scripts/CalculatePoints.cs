@@ -10,7 +10,7 @@ public class CalculatePoints : MonoBehaviour
     int NumberOfGoodKidsGifted = 3;
     int NumberOfBadKidsGifted = 0;
     int NumberOfGoodKidsKicked = 1;
-    int TotalPoints;
+    static int TotalPoints;
     public Text points;
     public Text speedText;
     public Button speedButton;
@@ -18,14 +18,20 @@ public class CalculatePoints : MonoBehaviour
     public Button kickButton;
     public Text extraDText;
     public Button extraDButton;
+    static bool speedBuy = false;
+    static bool kickBuy = false;
+    static bool dayBuy = false;
 
     void Start()
     {
-        CalcPoints();
+        AnyBought();
+        UpdatePoints();
     }
 
-    void CalcPoints()
+    void CalcPoints() //calculates points
     {
+        //actual point calculation to be implemented below
+
         TotalPoints = TotalPoints + (NumberOfBadKidsKicked * 10);
         TotalPoints = TotalPoints + (NumberOfGoodKidsGifted * 10);
         TotalPoints = TotalPoints - (NumberOfGoodKidsKicked * 10);
@@ -34,7 +40,7 @@ public class CalculatePoints : MonoBehaviour
         UpdatePoints();
     }
 
-    void UpdatePoints()
+    void UpdatePoints() //updates point value
     {
         points.text = TotalPoints.ToString();
     }
@@ -46,6 +52,7 @@ public class CalculatePoints : MonoBehaviour
             speedText.text = "Sold Out!";
             speedButton.interactable = false;
             TotalPoints -= 30;
+            speedBuy = true;
             UpdatePoints();
         }
     }
@@ -57,6 +64,7 @@ public class CalculatePoints : MonoBehaviour
             kickText.text = "Sold Out!";
             kickButton.interactable = false;
             TotalPoints -= 60;
+            kickBuy = true;
             UpdatePoints();
         }
     }
@@ -68,7 +76,27 @@ public class CalculatePoints : MonoBehaviour
             extraDText.text = "Sold Out!";
             extraDButton.interactable = false;
             TotalPoints -= 120;
+            dayBuy = true;
             UpdatePoints();
+        }
+    }
+
+    void AnyBought() //checks to see what power-ups have already been purchased
+    {
+        if (speedBuy)
+        {
+            speedText.text = "Sold Out!";
+            speedButton.interactable = false;
+        }
+        if (kickBuy)
+        {
+            kickText.text = "Sold Out!";
+            kickButton.interactable = false;
+        }
+        if (dayBuy)
+        {
+            extraDText.text = "Sold Out!";
+            extraDButton.interactable = false;
         }
     }
 }
