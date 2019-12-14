@@ -361,18 +361,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44946384}
   m_CullTransparentMesh: 0
---- !u!114 &82866016 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8752934517746858377, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1628582447}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &87680422
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,18 +572,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192769375}
   m_CullTransparentMesh: 0
---- !u!114 &240064886 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8752934518640306495, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1628582447}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &306327186
 GameObject:
   m_ObjectHideFlags: 0
@@ -1804,51 +1780,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: SoundtrackClips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: music
-      value: 
-      objectReference: {fileID: 1628582449}
-    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: sEffects
-      value: 
-      objectReference: {fileID: 1628582448}
-    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: eSlider
-      value: 
-      objectReference: {fileID: 461027418}
-    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: mSlider
-      value: 
-      objectReference: {fileID: 93739901}
-    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: AudioMenu
-      value: 
-      objectReference: {fileID: 1918494796}
-    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: ExitGame
-      value: 
-      objectReference: {fileID: 82866016}
-    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: CloseMenu
-      value: 
-      objectReference: {fileID: 240064886}
-    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: SoundtrackClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: eee1fcc7cddb7904ab5f1baf83170b2a, type: 3}
     - target: {fileID: 0}
       propertyPath: SoundtrackClips.Array.size
       value: 2
@@ -1889,6 +1820,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Menu & Audio Management
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752934518640306495, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 717428929}
+    - target: {fileID: 8752934518640306495, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: closeMenu
       objectReference: {fileID: 0}
     - target: {fileID: 1190945979102545273, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
         type: 3}
@@ -1959,16 +1900,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8752934518640306495, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 717428929}
-    - target: {fileID: 8752934518640306495, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: closeMenu
       objectReference: {fileID: 0}
     - target: {fileID: 8752934519201400951, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
         type: 3}
@@ -2130,12 +2061,6 @@ RectTransform:
   m_AnchoredPosition: {x: 308.25, y: -141.1}
   m_SizeDelta: {x: 296.7, y: 57}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1918494796 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8752934517655308506, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1628582447}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1939788056
 GameObject:
   m_ObjectHideFlags: 0

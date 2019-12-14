@@ -46,16 +46,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scnName: 
-  eSlider: {fileID: 0}
-  mSlider: {fileID: 0}
-  music: {fileID: 0}
-  sEffects: {fileID: 0}
-  SoundtrackClips: []
-  menuOpen: 0
-  menuClosed: 0
-  AudioMenu: {fileID: 0}
-  ExitGame: {fileID: 0}
-  CloseMenu: {fileID: 0}
+  eSlider: {fileID: 8752934517467443737}
+  mSlider: {fileID: 8752934519078489206}
+  music: {fileID: 8752934519201400951}
+  sEffects: {fileID: 8752934518084229638}
+  SoundtrackClips:
+  - {fileID: 8300000, guid: eee1fcc7cddb7904ab5f1baf83170b2a, type: 3}
+  - {fileID: 8300000, guid: 3a0b11b25d259ba4d96ae59dbb8aa5b9, type: 3}
+  - {fileID: 8300000, guid: e24465007e1c3614e9bc83bc05da2b29, type: 3}
+  - {fileID: 8300000, guid: 410fa970c8719a04296ef3b661363cfb, type: 3}
+  AudioMenu: {fileID: 8752934517655308506}
+  ExitGame: {fileID: 8752934517746858377}
+  CloseMenu: {fileID: 8752934518640306495}
 --- !u!1 &8752934517292083215
 GameObject:
   m_ObjectHideFlags: 0
