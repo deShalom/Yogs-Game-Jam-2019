@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":false,"pivot":{"x":0.0,"y":0.0,"z":12.5},"rotation":{"x":-0.02430593967437744,"y":-0.009899980388581753,"z":0.00024065494653768837,"w":-0.9996550679206848},"size":35.55451583862305,"orthographic":false}
 =======
@@ -6,4 +7,7 @@
 >>>>>>> Stashed changes
 =======
 ﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":301.497802734375,"y":25.156322479248048,"z":0.0},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":998.717529296875,"orthographic":true}
+>>>>>>> master
+=======
+﻿{"cameraMode":{"drawMode":0,"name":"Shaded","section":"Shading Mode"},"sceneLighting":false,"audioPlay":false,"sceneViewState":{"showFog":true,"showMaterialUpdate":false,"showSkybox":true,"showFlares":true,"showImageEffects":true,"showParticleSystems":true},"in2DMode":true,"pivot":{"x":11.038961410522461,"y":360.8880920410156,"z":-198.6791229248047},"rotation":{"x":0.0,"y":0.0,"z":0.0,"w":1.0},"size":225.90097045898438,"orthographic":true}
 >>>>>>> master
