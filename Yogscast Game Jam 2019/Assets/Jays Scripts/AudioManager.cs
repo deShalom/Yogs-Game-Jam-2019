@@ -6,24 +6,28 @@ using UnityEngine.UI;
 public class AudioManager : MonoBehaviour
 {
     //Variables
-    public Slider aSlider, mSlider;
+    public Slider eSlider, mSlider;
+    public AudioSource music, sEffects;
 
     //Methods
 
     private void Start()
     {
-        AudioListener.volume = PlayerPrefs.GetFloat("mVolume");
+        music.volume = PlayerPrefs.GetFloat("mVolume");
+        sEffects.volume = PlayerPrefs.GetFloat("eVolume");
     }
     private void Update()
     {
         //Tester
-        PlayerPrefs.SetFloat("mVolume", aSlider.value);
+        PlayerPrefs.SetFloat("mVolume", mSlider.value);
+        PlayerPrefs.SetFloat("eVolume", eSlider.value);
         Volume();
     }
 
     public void Volume()
     {
-        AudioListener.volume = PlayerPrefs.GetFloat("mVolume");
+        music.volume = PlayerPrefs.GetFloat("mVolume");
+        sEffects.volume = PlayerPrefs.GetFloat("eVolume");
     }
 }
 //All code written by Jay Underwood (deShalom).
