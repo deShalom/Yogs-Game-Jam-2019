@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Scenes/Eric's Test Scene.unity
+=======
+- path: Assets/Scenes/OpeningCutScene.unity
+>>>>>>> master
   isLoaded: 1
   isActive: 1
   isSubScene: 0
