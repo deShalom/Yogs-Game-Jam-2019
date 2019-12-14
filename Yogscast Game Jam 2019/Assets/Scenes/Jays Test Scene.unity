@@ -570,5 +570,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5503215585025764457, guid: c2c831b7bcf89fe48889814a3ca63f8e,
+        type: 3}
+      propertyPath: SoundtrackClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2c831b7bcf89fe48889814a3ca63f8e, type: 3}
