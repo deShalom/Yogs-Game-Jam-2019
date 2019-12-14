@@ -11,18 +11,38 @@ public class ConvoScript : MonoBehaviour
 
     public float audioSourceVolume;
 
-    public Text currentDisplayedText, questionOption1, questionOption2;
-    public GameObject questionsPanel;
+    public Text currentDisplayedText, questionOption1, questionOption2, diceText;
+    public GameObject questionsPanel, dice;
 
     [SerializeField] public AudioClip[] s_Slap, s_Kick, s_Gift;
     private AudioSource audioSource;
 
-    private bool conversationIsResolved = false;
+    private bool conversationIsResolved = false, waitingForDiceRoll = false;
+    private float diceTimer;
+    public bool diceHasRolled = false;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (waitingForDiceRoll && diceHasRolled)
+        {
+            waitingForDiceRoll = false;
+            diceHasRolled = false;
+            Debug.Log("rolled dice");
+            diceText.gameObject.SetActive(true);
+            //Time that the dice remains on screen
+            diceTimer = 1.5f;
+        }
+        if(diceTimer > 0f)
+        {
+            diceTimer -= Time.deltaTime;
+        }
+        else if(diceTimer != 0f)
+        {
+            diceTimer = 0f;
+            diceText.gameObject.SetActive(false);
+            dice.SetActive(false);
+        }
     }
 
     private void Start()
@@ -67,7 +87,7 @@ public class ConvoScript : MonoBehaviour
         //Kick logic
         //Roll d20 for damage
         var newRoll = RollD20();
-
+        diceText.text = newRoll.ToString();
 
         //Resolve conversation
         conversationIsResolved = true;
@@ -128,6 +148,9 @@ public class ConvoScript : MonoBehaviour
     private int RollD20()
     {
         //Run animation
+        dice.SetActive(true);
+        dice.GetComponent<Animation>().Play();
+        waitingForDiceRoll = true;
         return Random.Range(1, 20);
     }
 }
