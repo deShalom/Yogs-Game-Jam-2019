@@ -15,13 +15,7 @@ public class ConstantRotate : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
-
-        //
-        if (transform.localScale.x < 1f)
-        {
-            transform.Rotate(speedX * Time.deltaTime, speedY * Time.deltaTime, speedZ * Time.deltaTime);
-        }
+        transform.Rotate(speedX * Time.deltaTime, speedY * Time.deltaTime, speedZ * Time.deltaTime);
 
     }
 }
