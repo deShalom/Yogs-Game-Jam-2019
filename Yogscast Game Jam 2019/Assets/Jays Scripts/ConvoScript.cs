@@ -26,6 +26,8 @@ public class ConvoScript : MonoBehaviour
     private float diceTimer;
     public bool diceHasRolled = false;
 
+    string kickAnimation;
+
     // Update is called once per frame
     void Update()
     {
@@ -40,7 +42,7 @@ public class ConvoScript : MonoBehaviour
             //Play sound
             PlaySound(s_Kick[Random.Range(0, s_Kick.Length)]);
             //Play animation
-            legAnimator.SetTrigger("kick_1");
+            legAnimator.SetTrigger(kickAnimation);
         }
         if(diceTimer > 0f)
         {
@@ -98,6 +100,14 @@ public class ConvoScript : MonoBehaviour
         //Roll d20 for damage
         var newRoll = RollD20();
         diceText.text = newRoll.ToString();
+        if(newRoll > 15)
+        {
+            kickAnimation = "kick_2";
+        }
+        else
+        {
+            kickAnimation = "kick_1";
+        }
 
         //Resolve conversation
         conversationIsResolved = true;
@@ -108,6 +118,19 @@ public class ConvoScript : MonoBehaviour
     {
         PlaySound(s_Slap[Random.Range(0, s_Slap.Length)]);
         //Slap logic
+        var newRanNum = Random.Range(0,2);
+        switch (newRanNum)
+        {
+            case 0:
+                armAnimator.SetTrigger("slap_1");
+                break;
+            case 1:
+                armAnimator.SetTrigger("slap_2");
+                break;
+            case 2:
+                armAnimator.SetTrigger("slap_3");
+                break;
+        }
 
         CycleConversation();
     }
