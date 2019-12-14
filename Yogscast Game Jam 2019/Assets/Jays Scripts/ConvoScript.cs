@@ -25,9 +25,11 @@ public class ConvoScript : MonoBehaviour
 
 
     //Prefabs
-    public GameObject launchPoint;
+    public GameObject launchPoint, holdingPoint;
     [Header("Prefabs")]
     public GameObject[] presents;
+    public GameObject[] weapons;
+    public int testWeapon;
 
     private bool conversationIsResolved = false, waitingForDiceRoll = false;
     private float diceTimer;
@@ -71,6 +73,7 @@ public class ConvoScript : MonoBehaviour
         audioSource.volume = audioSourceVolume;
         dayCycles = GetComponent<DayCycles>();
         UpdatePresentText();
+        Instantiate(weapons[testWeapon], holdingPoint.transform);
     }
 
     public void StartNewConversation()
