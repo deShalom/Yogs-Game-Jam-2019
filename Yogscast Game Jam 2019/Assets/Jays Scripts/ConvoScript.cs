@@ -14,7 +14,7 @@ public class ConvoScript : MonoBehaviour
     //Leg and Arm animators
     public Animator legAnimator, armAnimator;
 
-    public Text currentDisplayedText, questionOption1, questionOption2, diceText;
+    public Text currentDisplayedText, questionOption1, questionOption2, diceText, noPresentsLeft;
     public GameObject questionsPanel, dice;
 
     private DayCycles dayCycles;
@@ -70,6 +70,7 @@ public class ConvoScript : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = audioSourceVolume;
         dayCycles = GetComponent<DayCycles>();
+        UpdatePresentText();
     }
 
     public void StartNewConversation()
@@ -144,10 +145,16 @@ public class ConvoScript : MonoBehaviour
 
     public void Gift()
     {
-        //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
-        LaunchPresent();
-        //Gift logic
-        armAnimator.SetTrigger("throw");
+        if (dayCycles.nOfPresents > 0)
+        {
+            //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
+            LaunchPresent();
+            //Gift logic
+            armAnimator.SetTrigger("throw");
+            //Decrement available presents
+            dayCycles.nOfPresents--;
+            UpdatePresentText();
+        }
         //Resolve conversation
         conversationIsResolved = true;
         CycleConversation();
@@ -193,6 +200,11 @@ public class ConvoScript : MonoBehaviour
         dice.GetComponent<Animation>().Play();
         waitingForDiceRoll = true;
         return Random.Range(1, 21);
+    }
+
+    private void UpdatePresentText()
+    {
+        noPresentsLeft.text = "Number of Presents Left: "+dayCycles.nOfPresents.ToString();
     }
 
     private void LaunchPresent()
