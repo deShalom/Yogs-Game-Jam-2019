@@ -687,7 +687,7 @@ PrefabInstance:
     - target: {fileID: 3357525944239722542, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1190945979102545273, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
         type: 3}
@@ -812,12 +812,12 @@ PrefabInstance:
     - target: {fileID: 8752934517655308506, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8752934518333799938, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aeeab78088a26b4fbdde6d097f8c93b, type: 3}
@@ -962,6 +962,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1454506076 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8752934517655308506, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1261963108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1489062728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,7 +1049,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1489062731}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1656980187}
+        m_MethodName: openCloseOptions
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1489062731
@@ -1096,6 +1113,7 @@ GameObject:
   - component: {fileID: 1656980184}
   - component: {fileID: 1656980183}
   - component: {fileID: 1656980186}
+  - component: {fileID: 1656980187}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1181,6 +1199,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scnName: OpeningCutScene
+--- !u!114 &1656980187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1656980182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea27c877e7ea4843a4a5cb6c967f7c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audiomanager: {fileID: 1454506076}
 --- !u!1 &1775116843
 GameObject:
   m_ObjectHideFlags: 0
