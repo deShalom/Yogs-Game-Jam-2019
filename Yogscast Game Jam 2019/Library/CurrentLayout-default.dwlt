@@ -67,8 +67,8 @@ MonoBehaviour:
     y: 0
     width: 389
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 72}
+  m_MaxSize: {x: 4002, y: 4022}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -337,21 +337,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Jays Scripts
+    - Assets/Models/Decor
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Jays Scripts
+  - Assets/Models/Decor
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Mjoln\Documents\GitHub\Yogs-Game-Jam-2019\Yogscast Game
+  m_LastProjectPath: C:\Users\bentr\Documents\GitHub\Yogs-Game-Jam-2019\Yogscast Game
     Jam 2019
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f02c0000
-    m_LastClickedID: 11504
-    m_ExpandedIDs: 00000000962c000000ca9a3b
+    m_SelectedIDs: 5e380000
+    m_LastClickedID: 14430
+    m_ExpandedIDs: 00000000523400005238000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -379,7 +379,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000962c0000
+    m_ExpandedIDs: 0000000052340000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -500,9 +500,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 76fbffff
-      m_LastClickedID: -1162
-      m_ExpandedIDs: 78fbffff
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: d0f4ffff0cf6ffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -562,9 +562,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 707.2036, y: 326.05267, z: 22.832987}
+    m_Target: {x: 8.3392, y: -6.2937965, z: -10.617213}
     speed: 2
-    m_Value: {x: 707.2036, y: 326.05267, z: 22.832987}
+    m_Value: {x: 8.3392, y: -6.2937965, z: -10.617213}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -593,13 +593,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.02430594, y: -0.00989998, z: 0.00024065495, w: -0.99965507}
+    m_Target: {x: -0.0072619193, y: -0.9797409, z: 0.19688046, w: -0.036164105}
     speed: 2
-    m_Value: {x: -0.02430595, y: -0.009899985, z: 0.00024065506, w: -0.99965554}
+    m_Value: {x: -0.007557176, y: -0.9796784, z: 0.19686788, w: -0.037633397}
   m_Size:
-    m_Target: 737.62384
+    m_Target: 22.19431
     speed: 2
-    m_Value: 705.8601
+    m_Value: 21.238573
   m_Ortho:
     m_Target: 0
     speed: 2
