@@ -20,12 +20,7 @@ public class DialogueManager : MonoBehaviour
         GetReason();
     }
 
-   
-
-    public void StartDialogue (Dialogue dialogue)
-    {
-        Debug.Log("Starting conversation with " + dialogue.name);
-    }
+      
     public void GetReason()
     {
         //Setup of alignment and generation of Reason
@@ -35,7 +30,7 @@ public class DialogueManager : MonoBehaviour
         txtFile.Close();
         
         reason = contents.Split("\n"[0]);
-        reasonTxt = reason[Random.Range(0, 5)];
+        reasonTxt = reason[Random.Range(0, reason.Length)];
         //Deciding if they're lying depending on chance from alignment.
         if (charAlignment == 0)
         {
