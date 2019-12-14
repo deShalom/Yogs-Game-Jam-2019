@@ -11,19 +11,40 @@ public class ConvoScript : MonoBehaviour
 
     public float audioSourceVolume;
 
-
-    public Text currentDisplayedText, questionOption1, questionOption2;
-    public GameObject questionsPanel;
+    public Text currentDisplayedText, questionOption1, questionOption2, diceText;
+    public GameObject questionsPanel, dice;
 
     [SerializeField] public AudioClip[] s_Slap, s_Kick, s_Gift;
     private AudioSource audioSource;
 
-
+    private bool conversationIsResolved = false, waitingForDiceRoll = false;
+    private float diceTimer;
+    public bool diceHasRolled = false;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (waitingForDiceRoll && diceHasRolled)
+        {
+            waitingForDiceRoll = false;
+            diceHasRolled = false;
+            Debug.Log("rolled dice");
+            diceText.gameObject.SetActive(true);
+            //Time that the dice remains on screen
+            diceTimer = 1.5f;
+            //Play sound
+            PlaySound(s_Kick[Random.Range(0, s_Kick.Length)]);
+        }
+        if(diceTimer > 0f)
+        {
+            diceTimer -= Time.deltaTime;
+        }
+        else if(diceTimer != 0f)
+        {
+            diceTimer = 0f;
+            diceText.gameObject.SetActive(false);
+            dice.SetActive(false);
+        }
     }
 
     private void Start()
@@ -36,6 +57,7 @@ public class ConvoScript : MonoBehaviour
 
     public void StartNewConversation()
     {
+        conversationIsResolved = false;
         //Show character
         //Set text and convo options
         //currentMainText = text from file;
@@ -45,22 +67,51 @@ public class ConvoScript : MonoBehaviour
         //
     }
 
+    //Use whenever action takes place- this will update what the character says or decide when a conversation is over
+    private void CycleConversation()
+    {
+        if (conversationIsResolved /*&& no of viewings left is != 0*/)
+        {
+            StartNewConversation();
+        }
+        else
+        {
+            //Update conversation
+            questionOption1.text = conversationOptions[0];
+            questionOption2.text = conversationOptions[1];
+            currentDisplayedText.text = currentMainText;
+        }
+    }
+
     public void KickPerson()
     {
-        PlaySound(s_Kick[Random.Range(0, s_Kick.Length)]);
+
         //Kick logic
+        //Roll d20 for damage
+        var newRoll = RollD20();
+        diceText.text = newRoll.ToString();
+
+        //Resolve conversation
+        conversationIsResolved = true;
+        CycleConversation();
     }
 
     public void SlapPerson()
     {
         PlaySound(s_Slap[Random.Range(0, s_Slap.Length)]);
         //Slap logic
+
+        CycleConversation();
     }
 
     public void Gift()
     {
         PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
         //Gift logic
+
+        //Resolve conversation
+        conversationIsResolved = true;
+        CycleConversation();
     }
 
     public void QuestionsToggle()
@@ -87,7 +138,7 @@ public class ConvoScript : MonoBehaviour
         }
 
         QuestionsToggle();
-
+        CycleConversation();
     }
 
     private void PlaySound(AudioClip clip)
@@ -96,4 +147,12 @@ public class ConvoScript : MonoBehaviour
         audioSource.Play();
     }
     
+    private int RollD20()
+    {
+        //Run animation
+        dice.SetActive(true);
+        dice.GetComponent<Animation>().Play();
+        waitingForDiceRoll = true;
+        return Random.Range(1, 20);
+    }
 }

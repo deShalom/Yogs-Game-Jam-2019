@@ -49,7 +49,7 @@ public class CutScene : MonoBehaviour
         if ((completedMoving) & (timer > waitTime))
         {
             objtxt.SetActive(true);
-            lerpedColor = Color.Lerp(Color.white, Color.black, Mathf.PingPong(Time.time, 1));
+            lerpedColor = Color.Lerp(Color.black, Color.white, Mathf.PingPong(Time.time, 1));
         }
 
     }
