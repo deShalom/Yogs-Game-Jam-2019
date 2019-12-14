@@ -118,7 +118,7 @@ public class ConvoScript : MonoBehaviour
     {
         PlaySound(s_Slap[Random.Range(0, s_Slap.Length)]);
         //Slap logic
-        var newRanNum = Random.Range(0,2);
+        var newRanNum = Random.Range(0,3);
         switch (newRanNum)
         {
             case 0:
@@ -137,9 +137,9 @@ public class ConvoScript : MonoBehaviour
 
     public void Gift()
     {
-        PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
+        //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
         //Gift logic
-
+        armAnimator.SetTrigger("give");
         //Resolve conversation
         conversationIsResolved = true;
         CycleConversation();
@@ -184,6 +184,6 @@ public class ConvoScript : MonoBehaviour
         dice.SetActive(true);
         dice.GetComponent<Animation>().Play();
         waitingForDiceRoll = true;
-        return Random.Range(1, 20);
+        return Random.Range(1, 21);
     }
 }
