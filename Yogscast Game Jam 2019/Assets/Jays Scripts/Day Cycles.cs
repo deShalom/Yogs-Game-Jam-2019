@@ -19,7 +19,7 @@ public class DayCycles : MonoBehaviour
         
     }
 
-    void ViewerCycle()
+    public void ViewerCycle()
     {
         while(nOfViewersCounter >= 1)
         {

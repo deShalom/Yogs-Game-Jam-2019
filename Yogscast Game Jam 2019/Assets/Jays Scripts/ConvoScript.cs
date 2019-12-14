@@ -11,8 +11,13 @@ public class ConvoScript : MonoBehaviour
 
     public float audioSourceVolume;
 
+    //Leg and Arm animators
+    public Animator legAnimator, armAnimator;
+
     public Text currentDisplayedText, questionOption1, questionOption2, diceText;
     public GameObject questionsPanel, dice;
+
+    private DayCycles dayCycles;
 
     [SerializeField] public AudioClip[] s_Slap, s_Kick, s_Gift;
     private AudioSource audioSource;
@@ -34,6 +39,8 @@ public class ConvoScript : MonoBehaviour
             diceTimer = 1.5f;
             //Play sound
             PlaySound(s_Kick[Random.Range(0, s_Kick.Length)]);
+            //Play animation
+            legAnimator.SetTrigger("kick_1");
         }
         if(diceTimer > 0f)
         {
@@ -53,6 +60,7 @@ public class ConvoScript : MonoBehaviour
         StartNewConversation();
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = audioSourceVolume;
+        dayCycles = GetComponent<DayCycles>();
     }
 
     public void StartNewConversation()
@@ -72,7 +80,7 @@ public class ConvoScript : MonoBehaviour
     {
         if (conversationIsResolved /*&& no of viewings left is != 0*/)
         {
-            StartNewConversation();
+            dayCycles.ViewerCycle();
         }
         else
         {
