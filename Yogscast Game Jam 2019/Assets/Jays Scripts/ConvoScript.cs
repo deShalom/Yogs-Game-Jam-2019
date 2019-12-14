@@ -7,13 +7,16 @@ public class ConvoScript : MonoBehaviour
 {
     public string[] conversationOptions;
     private string currentMainText;
+    //[Header("UI Question Buttons")]
     public Button option1, option2;
 
     public float audioSourceVolume;
 
+    //[Header("Animators")]
     //Leg and Arm animators
-    public Animator legAnimator, armAnimator;
+    public Animator legAnimator, armAnimator, doorAnimator;
 
+    //[Header("UI Text")]
     public Text currentDisplayedText, questionOption1, questionOption2, diceText, noPresentsLeft;
     public GameObject questionsPanel, dice;
 
@@ -86,6 +89,7 @@ public class ConvoScript : MonoBehaviour
         questionOption2.text = conversationOptions[1];
         currentDisplayedText.text = currentMainText;
         //
+        doorAnimator.SetTrigger("door_open");
     }
 
     //Use whenever action takes place- this will update what the character says or decide when a conversation is over
@@ -94,6 +98,8 @@ public class ConvoScript : MonoBehaviour
         if (conversationIsResolved /*&& no of viewings left is != 0*/)
         {
             dayCycles.ViewerCycle();
+            conversationIsResolved = false;
+            doorAnimator.SetTrigger("door_close");
         }
         else
         {
