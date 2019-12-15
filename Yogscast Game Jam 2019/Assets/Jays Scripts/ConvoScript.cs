@@ -246,7 +246,7 @@ public class ConvoScript : MonoBehaviour
             //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
             //LaunchPresent();
             //Gift logic
-            calcpoints.GetComponent<CalculatePoints>().Gifted();
+            
             if (dayCycles.nOfPresents > 0)
             {
                 //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
@@ -256,6 +256,7 @@ public class ConvoScript : MonoBehaviour
                 //Decrement available presents
                 dayCycles.nOfPresents--;
                 UpdatePresentText();
+                calcpoints.GetComponent<CalculatePoints>().Gifted();
             }
             //Resolve conversation
             conversationIsResolved = true;
