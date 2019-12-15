@@ -26,7 +26,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 444}
   m_MaxSize: {x: 22012, y: 10022}
   vertical: 0
-  controlID: 147
+  controlID: 1082
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 444}
   m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
-  controlID: 54
+  controlID: 1060
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -195,9 +195,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 286.3379, y: 211.65976, z: -244.73024}
+    m_Target: {x: 421.32776, y: 352.35614, z: -57.90657}
     speed: 2
-    m_Value: {x: 286.3379, y: 211.65976, z: -244.73024}
+    m_Value: {x: 421.32776, y: 352.35614, z: -57.90657}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -226,13 +226,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.08555501, y: 0.058846314, z: -0.005062462, w: -0.99458474}
+    m_Target: {x: -0.23279572, y: -0.24988723, z: 0.062031303, w: -0.93783474}
     speed: 2
-    m_Value: {x: -0.08555501, y: 0.058846314, z: -0.0050624623, w: -0.9945848}
+    m_Value: {x: -0.23279347, y: -0.24988481, z: 0.062030703, w: -0.9378257}
   m_Size:
-    m_Target: 10
+    m_Target: 242.4928
     speed: 2
-    m_Value: 10
+    m_Value: 242.4928
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -251,7 +251,7 @@ MonoBehaviour:
     m_DynamicClip: 1
     m_OcclusionCulling: 0
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: 0, y: 0, z: 0, w: 0}
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -341,7 +341,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 98d4ffff
+      m_ExpandedIDs: 3ed0ffff2a42000022430000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -430,11 +430,11 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Jays Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Jays Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\kjfuk\Documents\GitHub\Yogs-Game-Jam-2019\Yogscast Game
     Jam 2019
@@ -442,9 +442,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: a03d0000
-    m_LastClickedID: 15776
-    m_ExpandedIDs: 00000000a03d000000ca9a3b
+    m_SelectedIDs: 8a3e0000
+    m_LastClickedID: 16010
+    m_ExpandedIDs: 000000001c3e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -472,7 +472,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000a03d0000
+    m_ExpandedIDs: 000000001c3e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -527,7 +527,7 @@ MonoBehaviour:
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
-  m_DirectoriesAreaWidth: 112
+  m_DirectoriesAreaWidth: 170
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52

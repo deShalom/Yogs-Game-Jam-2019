@@ -278,14 +278,14 @@ public class ConvoScript : MonoBehaviour
             //LaunchPresent();
             //Gift logic
             
-            if (dayCycles.nOfPresents > 0)
+            if (DayCycles.nOfPresents > 0)
             {
                 //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
                 LaunchPresent();
                 //Gift logic
                 armAnimator.SetTrigger("throw");
                 //Decrement available presents
-                dayCycles.nOfPresents--;
+                DayCycles.nOfPresents--;
                 UpdatePresentText();
                 calcpoints.GetComponent<CalculatePoints>().Gifted();
             }
@@ -342,7 +342,7 @@ public class ConvoScript : MonoBehaviour
 
     private void UpdatePresentText()
     {
-        noPresentsLeft.text = "Number of Presents Left: "+dayCycles.nOfPresents.ToString();
+        noPresentsLeft.text = "Number of Presents Left: "+DayCycles.nOfPresents.ToString();
     }
 
     private void LaunchPresent()

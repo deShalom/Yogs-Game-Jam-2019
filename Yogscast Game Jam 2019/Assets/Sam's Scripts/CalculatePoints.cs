@@ -101,7 +101,7 @@ public class CalculatePoints : MonoBehaviour
         {
             if (speedBuy && !speedUsed)
             {
-                Days.GetComponent<DayCycles>().nOfViewers++;
+                DayCycles.nOfViewers++;
                 speedUsed = true;
             }
             if (dayBuy && dayUsed)

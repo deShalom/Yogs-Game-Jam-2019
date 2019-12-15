@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dialog: {fileID: 1233671904}
+  Days: {fileID: 0}
   charalign: 0
   points: {fileID: 1649498868}
   speedText: {fileID: 0}
@@ -668,6 +669,7 @@ MonoBehaviour:
   - SOMETEXTSOMETEXTSOMETEXTSOMETEXTSOMETEXTSOMETEXT
   option1: {fileID: 237614169}
   option2: {fileID: 1840858446}
+  nameText: {fileID: 345876084}
   calcpoints: {fileID: 220898844}
   audioSourceVolume: 0.3
   legAnimator: {fileID: 429948230}
@@ -708,6 +710,7 @@ MonoBehaviour:
   - {fileID: 6616467340008238990, guid: 30a20077d9f22f04f94e30a3eaf3fa23, type: 3}
   - {fileID: 4520882536603962415, guid: e2b081ecda578714c88e96fb04877e74, type: 3}
   testWeapon: 1
+  personID: 0
   diceHasRolled: 0
 --- !u!4 &390420285
 Transform:
@@ -831,10 +834,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8911069a37784d4196003a3f748f6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nOfViewers: 10
-  nOfPresents: 6
-  nOfViewersCounter: 10
+  nOfViewersCounter: 1
   convoScript: {fileID: 390420284}
+  cc: {fileID: 1195664909}
 --- !u!1 &413118578
 GameObject:
   m_ObjectHideFlags: 0
