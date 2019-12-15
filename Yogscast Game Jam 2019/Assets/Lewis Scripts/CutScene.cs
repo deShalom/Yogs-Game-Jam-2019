@@ -11,10 +11,11 @@ public class CutScene : MonoBehaviour
     private GameObject objtxt, audioMenu;
     private Text txtplaygame;
     public bool completedMoving, timehasbeenset, textshowing;
-    private float timer;
+    private float timer,timerSound, waitSound;
     Color lerpedColor;
     SceneLoader sl;
     JsCommonCode am;
+    Vector3 lastrotate;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,7 +31,14 @@ public class CutScene : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        am.soundEffect(0);
+        timerSound += Time.deltaTime;
+        if ((lastrotate != transform.rotation.eulerAngles) & (timerSound>waitSound))
+        {
+            am.soundEffect(0);
+            waitSound = 0.5f;
+            timerSound = 0f;
+        }
+
         txtplaygame.color = lerpedColor;
         timer += Time.deltaTime;
 
@@ -39,12 +47,15 @@ public class CutScene : MonoBehaviour
         {
             transform.Rotate(speedX * Time.deltaTime, speedY * Time.deltaTime, speedZ * Time.deltaTime);
             transform.localScale = Vector3.Lerp(transform.localScale, transform.localScale * 2, Time.deltaTime * 1.2f);
+            
+
         }
         if((transform.localScale.x >= 1f) & (transform.localRotation.z != 0))
         {
             transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, new Vector3(0,0,0), Time.deltaTime * 10f);
+            lastrotate = transform.rotation.eulerAngles;
             completedMoving = true;
-            
+
             if (!timehasbeenset)
             {
                 timer = 0f;
