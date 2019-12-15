@@ -2382,6 +2382,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu & Audio Management
       objectReference: {fileID: 0}
+    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+        type: 3}
+      propertyPath: SoundEffectClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+        type: 3}
+      propertyPath: SoundEffectClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 57a2d50d819de14499021a2d897f94f7, type: 3}
+    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+        type: 3}
+      propertyPath: SoundEffectClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: ff5203bbbcb49a842affe6542ab528eb, type: 3}
     - target: {fileID: 8752934517655308506, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
         type: 3}
       propertyPath: m_IsActive
