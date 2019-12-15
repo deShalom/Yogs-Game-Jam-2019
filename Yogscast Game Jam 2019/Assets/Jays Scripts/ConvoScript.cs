@@ -137,13 +137,22 @@ public class ConvoScript : MonoBehaviour
     {
         if (conversationIsResolved /*&& no of viewings left is != 0*/)
         {
-            calcpoints.GetComponent<CalculatePoints>().UpdatePoints();
-            dayCycles.ViewerCycle();
-            conversationIsResolved = false;
-            conversationOnGoing = false;
-            doorAnimator.SetTrigger("door_close");
-            //Set timer for next viewing
-            timer = 2f;
+            Debug.Log(dayCycles.nOfViewersCounter);
+            if (dayCycles.nOfViewersCounter != 0)
+            {
+                Debug.Log("day cycle");
+                calcpoints.GetComponent<CalculatePoints>().UpdatePoints();
+                dayCycles.ViewerCycle();
+                conversationIsResolved = false;
+                conversationOnGoing = false;
+                doorAnimator.SetTrigger("door_close");
+                //Set timer for next viewing
+                timer = 2f;
+            }
+            else
+            {
+                dayCycles.ViewerCycle();
+            }
         }
         else
         {
@@ -152,6 +161,7 @@ public class ConvoScript : MonoBehaviour
             questionOption2.text = conversationOptions[1];
             currentDisplayedText.text = currentMainText;
         }
+
     }
 
     void NewViewingReady()
@@ -222,15 +232,12 @@ public class ConvoScript : MonoBehaviour
 
     public void Gift()
     {
+        Debug.Log("throw gift");
         if (conversationOnGoing)
         {
             //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
-            LaunchPresent();
+            //LaunchPresent();
             //Gift logic
-            armAnimator.SetTrigger("throw");
-            //Decrement available presents
-            dayCycles.nOfPresents--;
-            UpdatePresentText();
             calcpoints.GetComponent<CalculatePoints>().Gifted();
             if (dayCycles.nOfPresents > 0)
             {
