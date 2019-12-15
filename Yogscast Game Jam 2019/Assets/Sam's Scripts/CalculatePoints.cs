@@ -34,7 +34,10 @@ public class CalculatePoints : MonoBehaviour
 
     private void Update()
     {
-        charalign = Dialog.GetComponent<DialogueManager>().charAlignment;
+        if (SceneManager.GetActiveScene().name == "UpgradesScene")
+        {
+            charalign = Dialog.GetComponent<DialogueManager>().charAlignment;
+        }
     }
 
     public void UpdatePoints() //updates point value
