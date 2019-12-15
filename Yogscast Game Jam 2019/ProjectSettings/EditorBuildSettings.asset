@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OpeningCutScene.unity
     guid: b43b5f6e85706834484c1094ed8ad99f
+  - enabled: 1
+    path: Assets/Scenes/Dialogue.unity
+    guid: 73503fa4ab68ab3488d759c581a361f1
   m_configObjects: {}
