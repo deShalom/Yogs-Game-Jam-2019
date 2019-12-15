@@ -32,7 +32,6 @@ public class JsCommonCode : MonoBehaviour
         openMenuKey(AudioMenu);
 
         //Check against Lewis's splash screen bool
-        soundTrack();
     }
 
     //Audio Control

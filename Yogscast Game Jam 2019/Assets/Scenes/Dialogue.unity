@@ -833,6 +833,7 @@ MonoBehaviour:
   nOfViewers: 10
   nOfPresents: 6
   nOfViewersCounter: 0
+  convoScript: {fileID: 390420284}
 --- !u!1 &413118578
 GameObject:
   m_ObjectHideFlags: 0
