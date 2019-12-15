@@ -57,6 +57,7 @@ public class JsCommonCode : MonoBehaviour
     public void soundEffect(int eClip)
     {
         sEffects.clip = SoundEffectClips[eClip];
+        sEffects.Play();
     }
 
     //Sound Effects Player
@@ -64,6 +65,7 @@ public class JsCommonCode : MonoBehaviour
     {
         sEffects.clip = SoundEffectClips[eClip];
         sEffects2.clip = SoundEffectClips[eClip2];
+        sEffects2.Play();
     }
 
     //Scene Loader
