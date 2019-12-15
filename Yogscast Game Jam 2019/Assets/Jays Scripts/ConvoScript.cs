@@ -9,6 +9,7 @@ public class ConvoScript : MonoBehaviour
     private string currentMainText;
     //[Header("UI Question Buttons")]
     public Button option1, option2;
+    public Text nameText;
     public GameObject calcpoints;
     public float audioSourceVolume;
 
@@ -38,7 +39,7 @@ public class ConvoScript : MonoBehaviour
     public GameObject[] presents;
     public GameObject[] weapons;
     public GameObject[] characters;
-    public int testWeapon;
+    public int testWeapon, personID;
 
     private bool conversationIsResolved = false, waitingForDiceRoll = false, conversationOnGoing = false;
     private float diceTimer, timer;
@@ -130,10 +131,34 @@ public class ConvoScript : MonoBehaviour
         questionOption2.text = conversationOptions[1];
         currentDisplayedText.text = currentMainText;
         //
-        currentPerson = Instantiate(characters[Random.Range(0, characters.Length)], personSpawner.transform);
+        personID = Random.Range(0, characters.Length);
+        currentPerson = Instantiate(characters[personID], personSpawner.transform);
+        
         animatorOfCurrentPerson = currentPerson.GetComponentInChildren<Animator>();
         doorAnimator.SetTrigger("door_open");
         conversationOnGoing = true;
+        switch (personID)
+        {
+            case 0:
+                nameText.text = "Duncan";
+                break;
+            case 1:
+                nameText.text = "Lewis";
+
+                break;
+            case 2:
+                nameText.text = "Simon";
+
+                break;
+            case 3:
+                nameText.text = "Sips";
+
+                break;
+            case 4:
+                nameText.text = "Spiff";
+
+                break;
+        }
     }
 
     //Use whenever action takes place- this will update what the character says or decide when a conversation is over
