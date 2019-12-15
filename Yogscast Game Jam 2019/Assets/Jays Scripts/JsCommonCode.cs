@@ -19,9 +19,12 @@ public class JsCommonCode : MonoBehaviour
     //Methods
     private void Start()
     {
-        music.volume = PlayerPrefs.GetFloat("mVolume");
-        sEffects.volume = PlayerPrefs.GetFloat("eVolume");
-        sEffects2.volume = PlayerPrefs.GetFloat("eVolume");
+
+        mSlider.value = PlayerPrefs.GetFloat("mVolume");
+        eSlider.value = PlayerPrefs.GetFloat("eVolume");
+        //music.volume = PlayerPrefs.GetFloat("mVolume");
+        //sEffects.volume = PlayerPrefs.GetFloat("eVolume");
+        //sEffects2.volume = PlayerPrefs.GetFloat("eVolume");
     }
     private void Update()
     {
