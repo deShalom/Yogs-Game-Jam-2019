@@ -17,6 +17,7 @@ public class DayCycles : MonoBehaviour
 
     void Start()
     {
+        nOfViewersCounter = nOfViewers;
         ViewerCycle();
         //convoScript = gameObject.GetComponent<ConvoScript>();
     }
@@ -51,9 +52,9 @@ public class DayCycles : MonoBehaviour
     void DayComplete()
     {
         Days = Days - 1;
-        nOfViewers = nOfViewers++;
-        nOfPresents = nOfPresents++;
-        nOfViewersCounter = nOfViewers;
+        nOfViewers += 1;
+        nOfPresents += 1;
+        //nOfViewersCounter = nOfViewers;
         //ViewerCycle();
 
         if (Days == 0)
