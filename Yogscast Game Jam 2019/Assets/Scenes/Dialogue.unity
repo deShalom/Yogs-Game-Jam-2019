@@ -834,7 +834,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8911069a37784d4196003a3f748f6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nOfViewersCounter: 1
+  nOfViewersCounter: 5
   convoScript: {fileID: 390420284}
   cc: {fileID: 1195664909}
 --- !u!1 &413118578
