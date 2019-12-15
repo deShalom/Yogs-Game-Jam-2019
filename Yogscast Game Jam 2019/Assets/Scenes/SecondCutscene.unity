@@ -424,8 +424,8 @@ MonoBehaviour:
   objtxt: {fileID: 1352792006}
   audioMenu: {fileID: 1677256355}
   startMarker: {fileID: 1228923756}
-  endMarker: {x: 0, y: 1, z: 2}
-  makeMePoint2LowerThanEndMaker: 1.8
+  endMarker: {x: 0, y: 1, z: 1}
+  makeMePoint2LowerThanEndMaker: 0.8
   speed: 0.005
   rotateBackSpeed: 10
   timeForSteps: 0.9
@@ -1002,6 +1002,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+        type: 3}
+      propertyPath: SoundEffectClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+        type: 3}
+      propertyPath: SoundEffectClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 34eedf5380809ba498fb5fbb51d15c24, type: 3}
+    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+        type: 3}
+      propertyPath: SoundEffectClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1d62b1e80d64e2c4ebf041640ca2ca4d, type: 3}
+    - target: {fileID: 8752934517655308506, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1190945979102545273, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1112,26 +1132,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8752934517655308506, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: SoundEffectClips.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: SoundEffectClips.Array.data[0]
-      value: 
-      objectReference: {fileID: 8300000, guid: 34eedf5380809ba498fb5fbb51d15c24, type: 3}
-    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
-        type: 3}
-      propertyPath: SoundEffectClips.Array.data[1]
-      value: 
-      objectReference: {fileID: 8300000, guid: 1d62b1e80d64e2c4ebf041640ca2ca4d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0aeeab78088a26b4fbdde6d097f8c93b, type: 3}
 --- !u!1 &2008698845
