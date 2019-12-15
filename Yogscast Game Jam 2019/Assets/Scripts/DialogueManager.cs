@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
-    public int charAlignment;
+    public int charAlignment, charID;
     public string contents, reasonTxt;
     public string[] reason;
     public TextAsset[] dialogueFile;
@@ -25,6 +25,7 @@ public class DialogueManager : MonoBehaviour
     {
         //Setup of alignment and generation of Reason
         charAlignment = Random.Range(0, 3);
+        charID = Random.Range(0, 5);
         txtFile = new StreamReader(Application.dataPath + "/Dialog Resources/" + dialogueFile[charAlignment].name + ".txt");
         contents = txtFile.ReadToEnd();
         txtFile.Close();
