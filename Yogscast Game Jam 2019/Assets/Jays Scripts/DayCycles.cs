@@ -10,9 +10,12 @@ public class DayCycles : MonoBehaviour
     public int nOfViewersCounter;
     private bool viewingDone;
 
+    public ConvoScript convoScript;
+
     void Start()
     {
         ViewerCycle();
+        //convoScript = gameObject.GetComponent<ConvoScript>();
     }
 
     void Update()
@@ -22,15 +25,15 @@ public class DayCycles : MonoBehaviour
 
     public void ViewerCycle()
     {
-        while(nOfViewersCounter >= 1)
+        if(nOfViewersCounter >= 1)
         {
             //Insert code here to execute viewer.
             LaunchViewing();
-            if (nOfViewers == 0)
-            {
-                DayComplete();
-                break;
-            }
+
+        }
+        else if (nOfViewers == 0)
+        {
+            DayComplete();
         }
     }
 
@@ -51,6 +54,8 @@ public class DayCycles : MonoBehaviour
     void LaunchViewing()
     {
         //Inster code here to start a viewing.
+        convoScript.StartNewConversation();
+
         if (viewingDone == true)
         {
             ViewingComplete();

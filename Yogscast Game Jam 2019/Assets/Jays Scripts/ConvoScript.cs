@@ -9,7 +9,7 @@ public class ConvoScript : MonoBehaviour
     private string currentMainText;
     //[Header("UI Question Buttons")]
     public Button option1, option2;
-
+    public GameObject calcpoints;
     public float audioSourceVolume;
 
     //[Header("Animators")]
@@ -22,6 +22,7 @@ public class ConvoScript : MonoBehaviour
 
     private DayCycles dayCycles;
     public DialogueManager dialogueManager;
+    public CalculatePoints calculatePoints;
 
     [SerializeField] public AudioClip[] s_Slap, s_Kick, s_Gift;
     private AudioSource audioSource;
@@ -137,12 +138,22 @@ public class ConvoScript : MonoBehaviour
     {
         if (conversationIsResolved /*&& no of viewings left is != 0*/)
         {
-            dayCycles.ViewerCycle();
-            conversationIsResolved = false;
-            conversationOnGoing = false;
-            doorAnimator.SetTrigger("door_close");
-            //Set timer for next viewing
-            timer = 2f;
+            Debug.Log(dayCycles.nOfViewersCounter);
+            if (dayCycles.nOfViewersCounter != 0)
+            {
+                Debug.Log("day cycle");
+                calcpoints.GetComponent<CalculatePoints>().UpdatePoints();
+                dayCycles.ViewerCycle();
+                conversationIsResolved = false;
+                conversationOnGoing = false;
+                doorAnimator.SetTrigger("door_close");
+                //Set timer for next viewing
+                timer = 2f;
+            }
+            else
+            {
+                dayCycles.ViewerCycle();
+            }
         }
         else
         {
@@ -151,6 +162,7 @@ public class ConvoScript : MonoBehaviour
             questionOption2.text = conversationOptions[1];
             currentDisplayedText.text = currentMainText;
         }
+
     }
 
     void NewViewingReady()
@@ -165,8 +177,12 @@ public class ConvoScript : MonoBehaviour
             //Kick logic
             //Roll d20 for damage
             var newRoll = RollD20();
+            if (CalculatePoints.kickBuy)
+            {
+                newRoll += 5;
+            }
             diceText.text = newRoll.ToString();
-            if (newRoll > 15)
+            if (newRoll > 20)
             {
                 kickAnimation = "kick_2";
             }
@@ -177,52 +193,71 @@ public class ConvoScript : MonoBehaviour
         }
     }
 
-    public void KickingFinished()
+    public void KickingFinished(int crit)
     {
         //Resolve conversation
+        calcpoints.GetComponent<CalculatePoints>().Kicked();
         conversationIsResolved = true;
-        currentPerson.GetComponent<Rigidbody>().AddForce(0f,200f,1000f);
+        if (crit == 1)
+        {
+            currentPerson.GetComponent<Rigidbody>().AddForce(0f, 200f, 1000f);
+        }
+        else
+        {
+            currentPerson.GetComponent<Rigidbody>().AddForce(0f, 200f, 500);
+        }
         CycleConversation();
     }
 
     public void SlapPerson()
     {
-        PlaySound(s_Slap[Random.Range(0, s_Slap.Length)]);
-        //Slap logic
-        var newRanNum = Random.Range(0,3);
-        switch (newRanNum)
+        if (conversationOnGoing)
         {
-            case 0:
-                armAnimator.SetTrigger("slap_1");
-                break;
-            case 1:
-                armAnimator.SetTrigger("slap_2");
-                break;
-            case 2:
-                armAnimator.SetTrigger("slap_3");
-                break;
+            PlaySound(s_Slap[Random.Range(0, s_Slap.Length)]);
+            //Slap logic
+            var newRanNum = Random.Range(0, 3);
+            switch (newRanNum)
+            {
+                case 0:
+                    armAnimator.SetTrigger("slap_1");
+                    break;
+                case 1:
+                    armAnimator.SetTrigger("slap_2");
+                    break;
+                case 2:
+                    armAnimator.SetTrigger("slap_3");
+                    break;
+            }
+
+            animatorOfCurrentPerson.SetTrigger("hit");
+
+            CycleConversation();
         }
-
-        animatorOfCurrentPerson.SetTrigger("hit");
-
-        CycleConversation();
     }
 
     public void Gift()
     {
-        if (dayCycles.nOfPresents > 0)
+        Debug.Log("throw gift");
+        if (conversationOnGoing)
         {
             //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
-            LaunchPresent();
+            //LaunchPresent();
             //Gift logic
-            armAnimator.SetTrigger("throw");
-            //Decrement available presents
-            dayCycles.nOfPresents--;
-            UpdatePresentText();
+            calcpoints.GetComponent<CalculatePoints>().Gifted();
+            if (dayCycles.nOfPresents > 0)
+            {
+                //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
+                LaunchPresent();
+                //Gift logic
+                armAnimator.SetTrigger("throw");
+                //Decrement available presents
+                dayCycles.nOfPresents--;
+                UpdatePresentText();
+            }
+            //Resolve conversation
+            conversationIsResolved = true;
+            CycleConversation();
         }
-        //Resolve conversation
-        conversationIsResolved = true;
-        CycleConversation();
     }
 
     public void QuestionsToggle()

@@ -9,8 +9,8 @@ public class JsCommonCode : MonoBehaviour
     //Variables
     public string scnName;
     public Slider eSlider, mSlider;
-    public AudioSource music, sEffects;
-    public AudioClip[] SoundtrackClips;
+    public AudioSource music, sEffects, sEffects2;
+    public AudioClip[] SoundtrackClips, SoundEffectClips;
 
     //YogsGameJam Variables
     public GameObject AudioMenu;
@@ -21,6 +21,7 @@ public class JsCommonCode : MonoBehaviour
     {
         music.volume = PlayerPrefs.GetFloat("mVolume");
         sEffects.volume = PlayerPrefs.GetFloat("eVolume");
+        sEffects2.volume = PlayerPrefs.GetFloat("eVolume");
     }
     private void Update()
     {
@@ -31,7 +32,6 @@ public class JsCommonCode : MonoBehaviour
         openMenuKey(AudioMenu);
 
         //Check against Lewis's splash screen bool
-        soundTrack();
     }
 
     //Audio Control
@@ -39,10 +39,11 @@ public class JsCommonCode : MonoBehaviour
     {
         music.volume = PlayerPrefs.GetFloat("mVolume");
         sEffects.volume = PlayerPrefs.GetFloat("eVolume");
+        sEffects2.volume = PlayerPrefs.GetFloat("eVolume");
     }
 
     //Soundtrack
-    void soundTrack()
+    public void soundTrack()
     {
         if (!music.isPlaying)
         {
@@ -50,6 +51,21 @@ public class JsCommonCode : MonoBehaviour
             music.clip = SoundtrackClips[randomClip];
             music.Play();
         }
+    }
+
+    //Sound Effects Player
+    public void soundEffect(int eClip)
+    {
+        sEffects.clip = SoundEffectClips[eClip];
+        sEffects.Play();
+    }
+
+    //Sound Effects Player
+    void soundEffect(int eClip, int eClip2)
+    {
+        sEffects.clip = SoundEffectClips[eClip];
+        sEffects2.clip = SoundEffectClips[eClip2];
+        sEffects2.Play();
     }
 
     //Scene Loader
