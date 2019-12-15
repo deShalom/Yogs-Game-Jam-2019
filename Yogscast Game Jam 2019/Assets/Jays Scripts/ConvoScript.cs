@@ -7,20 +7,32 @@ public class ConvoScript : MonoBehaviour
 {
     public string[] conversationOptions;
     private string currentMainText;
+    //[Header("UI Question Buttons")]
     public Button option1, option2;
 
     public float audioSourceVolume;
 
+    //[Header("Animators")]
     //Leg and Arm animators
-    public Animator legAnimator, armAnimator;
+    public Animator legAnimator, armAnimator, doorAnimator;
 
-    public Text currentDisplayedText, questionOption1, questionOption2, diceText;
+    //[Header("UI Text")]
+    public Text currentDisplayedText, questionOption1, questionOption2, diceText, noPresentsLeft;
     public GameObject questionsPanel, dice;
 
     private DayCycles dayCycles;
 
     [SerializeField] public AudioClip[] s_Slap, s_Kick, s_Gift;
     private AudioSource audioSource;
+
+
+
+    //Prefabs
+    public GameObject launchPoint, holdingPoint;
+    [Header("Prefabs")]
+    public GameObject[] presents;
+    public GameObject[] weapons;
+    public int testWeapon;
 
     private bool conversationIsResolved = false, waitingForDiceRoll = false;
     private float diceTimer;
@@ -38,7 +50,7 @@ public class ConvoScript : MonoBehaviour
             Debug.Log("rolled dice");
             diceText.gameObject.SetActive(true);
             //Time that the dice remains on screen
-            diceTimer = 1.5f;
+            diceTimer = 1f;
             //Play sound
             PlaySound(s_Kick[Random.Range(0, s_Kick.Length)]);
             //Play animation
@@ -63,6 +75,8 @@ public class ConvoScript : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         audioSource.volume = audioSourceVolume;
         dayCycles = GetComponent<DayCycles>();
+        UpdatePresentText();
+        Instantiate(weapons[testWeapon], holdingPoint.transform);
     }
 
     public void StartNewConversation()
@@ -75,6 +89,7 @@ public class ConvoScript : MonoBehaviour
         questionOption2.text = conversationOptions[1];
         currentDisplayedText.text = currentMainText;
         //
+        doorAnimator.SetTrigger("door_open");
     }
 
     //Use whenever action takes place- this will update what the character says or decide when a conversation is over
@@ -83,6 +98,8 @@ public class ConvoScript : MonoBehaviour
         if (conversationIsResolved /*&& no of viewings left is != 0*/)
         {
             dayCycles.ViewerCycle();
+            conversationIsResolved = false;
+            doorAnimator.SetTrigger("door_close");
         }
         else
         {
@@ -118,7 +135,7 @@ public class ConvoScript : MonoBehaviour
     {
         PlaySound(s_Slap[Random.Range(0, s_Slap.Length)]);
         //Slap logic
-        var newRanNum = Random.Range(0,2);
+        var newRanNum = Random.Range(0,3);
         switch (newRanNum)
         {
             case 0:
@@ -137,9 +154,16 @@ public class ConvoScript : MonoBehaviour
 
     public void Gift()
     {
-        PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
-        //Gift logic
-
+        if (dayCycles.nOfPresents > 0)
+        {
+            //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
+            LaunchPresent();
+            //Gift logic
+            armAnimator.SetTrigger("throw");
+            //Decrement available presents
+            dayCycles.nOfPresents--;
+            UpdatePresentText();
+        }
         //Resolve conversation
         conversationIsResolved = true;
         CycleConversation();
@@ -184,6 +208,18 @@ public class ConvoScript : MonoBehaviour
         dice.SetActive(true);
         dice.GetComponent<Animation>().Play();
         waitingForDiceRoll = true;
-        return Random.Range(1, 20);
+        return Random.Range(1, 21);
+    }
+
+    private void UpdatePresentText()
+    {
+        noPresentsLeft.text = "Number of Presents Left: "+dayCycles.nOfPresents.ToString();
+    }
+
+    private void LaunchPresent()
+    {
+        var newPresent = Instantiate(presents[Random.Range(0,presents.Length)],launchPoint.transform);
+        newPresent.GetComponent<Rigidbody>().AddForce(new Vector3(0f,100f,1000f));
+        
     }
 }

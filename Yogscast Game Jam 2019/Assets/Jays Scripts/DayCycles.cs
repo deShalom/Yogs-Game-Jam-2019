@@ -6,6 +6,7 @@ public class DayCycles : MonoBehaviour
 {
     public int Days = 12;
     public int nOfViewers = 10;
+    public int nOfPresents = 6;
     public int nOfViewersCounter;
     private bool viewingDone;
 
@@ -37,6 +38,7 @@ public class DayCycles : MonoBehaviour
     {
         Days = Days - 1;
         nOfViewers = nOfViewers++;
+        nOfPresents = nOfPresents++;
         nOfViewersCounter = nOfViewers;
         ViewerCycle();
 
