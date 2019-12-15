@@ -23,6 +23,7 @@ public class ConvoScript : MonoBehaviour
     private DayCycles dayCycles;
     public DialogueManager dialogueManager;
     public CalculatePoints calculatePoints;
+    public JsCommonCode jsCommonCode;
 
     [SerializeField] public AudioClip[] s_Slap, s_Kick, s_Gift;
     private AudioSource audioSource;
@@ -48,6 +49,8 @@ public class ConvoScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        audioSource.volume = jsCommonCode.sEffects.volume;
+
         if (waitingForDiceRoll && diceHasRolled)
         {
             waitingForDiceRoll = false;
@@ -97,7 +100,7 @@ public class ConvoScript : MonoBehaviour
                 {
                     if (!conversationOnGoing)
                     {
-                        StartNewConversation();
+                        dayCycles.ViewerCycle();
                     }
                 }
             }
@@ -107,9 +110,9 @@ public class ConvoScript : MonoBehaviour
     private void Start()
     {
         currentMainText = "some texttxtxtxttxtxttxttxtxtxtxttxt";
-        StartNewConversation();
+        //StartNewConversation();
         audioSource = GetComponent<AudioSource>();
-        audioSource.volume = audioSourceVolume;
+        audioSource.volume = jsCommonCode.sEffects.volume;
         dayCycles = GetComponent<DayCycles>();
         UpdatePresentText();
         Instantiate(weapons[testWeapon], holdingPoint.transform);
@@ -141,9 +144,8 @@ public class ConvoScript : MonoBehaviour
             Debug.Log(dayCycles.nOfViewersCounter);
             if (dayCycles.nOfViewersCounter != 0)
             {
-                Debug.Log("day cycle");
                 calcpoints.GetComponent<CalculatePoints>().UpdatePoints();
-                dayCycles.ViewerCycle();
+                //dayCycles.ViewerCycle();
                 conversationIsResolved = false;
                 conversationOnGoing = false;
                 doorAnimator.SetTrigger("door_close");
@@ -152,6 +154,7 @@ public class ConvoScript : MonoBehaviour
             }
             else
             {
+                Debug.Log("day cycle");
                 dayCycles.ViewerCycle();
             }
         }

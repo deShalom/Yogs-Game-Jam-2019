@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SecondCutScene : MonoBehaviour
 {
     [SerializeField]
-    private GameObject objtxt;
+    private GameObject objtxt, audioMenu;
 
     // Transforms to act as start and end markers for the journey.
     public Transform startMarker;
@@ -39,6 +39,7 @@ public class SecondCutScene : MonoBehaviour
     Color lerpedColor;
 
     public SceneLoader sl;
+    private JsCommonCode am;
 
 
     //timer
@@ -63,6 +64,8 @@ public class SecondCutScene : MonoBehaviour
         // Calculate the journey length.
         journeyLength = Vector3.Distance(startMarker.position, endMarker);
         txtplaygame = objtxt.GetComponent<Text>();
+        am = audioMenu.GetComponent<JsCommonCode>();
+
     }
 
     // Move to the target end position.
@@ -108,6 +111,7 @@ public class SecondCutScene : MonoBehaviour
             print("im moving right");
             firstJolt = false;
             joltAmount = 4f;
+            am.soundEffect(0);
         }
         if ((startedLeftJolt) & (!lastJolt))
         {
@@ -116,7 +120,8 @@ public class SecondCutScene : MonoBehaviour
             startedLeftJolt = false;
             rightJolt = true;
             print("im moving left");
-            
+            am.soundEffect(1);
+
         }
 
         if ((transform.position.z > makeMePoint2LowerThanEndMaker) & (!lastJolt))

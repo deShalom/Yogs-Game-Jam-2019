@@ -28,7 +28,7 @@ public class DayCycles : MonoBehaviour
         {
             //Insert code here to execute viewer.
             LaunchViewing();
-
+            nOfViewersCounter--;
         }
         else if (nOfViewers == 0)
         {
@@ -47,6 +47,7 @@ public class DayCycles : MonoBehaviour
         if (Days == 0)
         {
             //Execute game over code here.
+
         }
     }
 
