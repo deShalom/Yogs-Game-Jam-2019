@@ -34,7 +34,7 @@ public class ConvoScript : MonoBehaviour
     public GameObject[] weapons;
     public int testWeapon;
 
-    private bool conversationIsResolved = false, waitingForDiceRoll = false;
+    private bool conversationIsResolved = false, waitingForDiceRoll = false, conversationOnGoing = false;
     private float diceTimer;
     public bool diceHasRolled = false;
 
@@ -66,6 +66,27 @@ public class ConvoScript : MonoBehaviour
             diceText.gameObject.SetActive(false);
             dice.SetActive(false);
         }
+
+        //Code for click raycasts (give button / door handle)
+        if (Input.GetButtonDown("Fire1"))
+        {
+            RaycastHit hit;
+            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit))
+            {
+                if (hit.transform.tag == "GiveButton")
+                {
+                    hit.transform.gameObject.GetComponent<Animator>().SetTrigger("button_press");
+                    Gift();
+                }
+                if(hit.transform.tag == "DoorHandle")
+                {
+                    if (!conversationOnGoing)
+                    {
+                        StartNewConversation();
+                    }
+                }
+            }
+        }
     }
 
     private void Start()
@@ -90,6 +111,7 @@ public class ConvoScript : MonoBehaviour
         currentDisplayedText.text = currentMainText;
         //
         doorAnimator.SetTrigger("door_open");
+        conversationOnGoing = true;
     }
 
     //Use whenever action takes place- this will update what the character says or decide when a conversation is over
@@ -99,6 +121,7 @@ public class ConvoScript : MonoBehaviour
         {
             dayCycles.ViewerCycle();
             conversationIsResolved = false;
+            conversationOnGoing = false;
             doorAnimator.SetTrigger("door_close");
         }
         else
