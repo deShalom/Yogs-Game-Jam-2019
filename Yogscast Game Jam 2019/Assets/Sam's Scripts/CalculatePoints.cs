@@ -24,17 +24,13 @@ public class CalculatePoints : MonoBehaviour
 
     void Start()
     {
-        charalign = Dialog.GetComponent<DialogueManager>().charAlignment;
-
         AnyBought();
         UpdatePoints();
     }
 
-    public void CalcPoints() //calculates points
+    private void Update()
     {
-        TotalPoints = TotalPoints + 10;
-
-        UpdatePoints();
+        charalign = Dialog.GetComponent<DialogueManager>().charAlignment;
     }
 
     public void UpdatePoints() //updates point value
@@ -99,11 +95,37 @@ public class CalculatePoints : MonoBehaviour
 
     public void Gifted()
     {
-        TotalPoints = TotalPoints + 10;
+        if (charalign == 2)
+        {
+            TotalPoints = TotalPoints + 10;
+        }
+
+        if (charalign == 1)
+        {
+            TotalPoints = TotalPoints + 5;
+        }
+
+        else
+        {
+            TotalPoints = TotalPoints - 5;
+        }
     }
 
     public void Kicked()
     {
-        TotalPoints = TotalPoints - 10;
+        if (charalign == 2)
+        {
+            TotalPoints = TotalPoints - 5;
+        }
+
+        if (charalign == 1)
+        {
+            TotalPoints = TotalPoints + 0;
+        }
+
+        else
+        {
+            TotalPoints = TotalPoints + 10;
+        }
     }
 }
