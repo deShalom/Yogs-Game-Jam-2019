@@ -13,6 +13,7 @@ public class DayCycles : MonoBehaviour
     private float timer;
 
     public ConvoScript convoScript;
+    public JsCommonCode cc;
 
     void Start()
     {
@@ -58,7 +59,7 @@ public class DayCycles : MonoBehaviour
         if (Days == 0)
         {
             //Execute game over code here.
-
+            cc.loadScene("Game Over Screen");
         }
         else
         {
