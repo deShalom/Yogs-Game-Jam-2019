@@ -681,6 +681,7 @@ MonoBehaviour:
   questionsPanel: {fileID: 1051740026}
   dice: {fileID: 1177977190}
   dialogueManager: {fileID: 1372188771}
+  calculatePoints: {fileID: 0}
   s_Slap:
   - {fileID: 8300000, guid: c72031230c3d8ad418026d766e3cfa9a, type: 3}
   - {fileID: 8300000, guid: e2965a65ff772f1419b728c9387a44fc, type: 3}
@@ -832,7 +833,7 @@ MonoBehaviour:
   Days: 12
   nOfViewers: 10
   nOfPresents: 6
-  nOfViewersCounter: 0
+  nOfViewersCounter: 10
   convoScript: {fileID: 390420284}
 --- !u!1 &413118578
 GameObject:
