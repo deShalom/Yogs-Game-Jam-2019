@@ -9,7 +9,8 @@ public class DayCycles : MonoBehaviour
     public int nOfViewers = 10;
     public int nOfPresents = 6;
     public int nOfViewersCounter;
-    private bool viewingDone;
+    private bool viewingDone, endDay = false;
+    private float timer;
 
     public ConvoScript convoScript;
 
@@ -21,6 +22,15 @@ public class DayCycles : MonoBehaviour
 
     void Update()
     {
+        if (timer > 0)
+        {
+            timer -= Time.deltaTime;
+        }
+        else if (timer != 0)
+        {
+            timer = 0f;
+            SceneManager.LoadScene("TransitionScene");
+        }
     }
 
     public void ViewerCycle()
@@ -43,7 +53,7 @@ public class DayCycles : MonoBehaviour
         nOfViewers = nOfViewers++;
         nOfPresents = nOfPresents++;
         nOfViewersCounter = nOfViewers;
-        ViewerCycle();
+        //ViewerCycle();
 
         if (Days == 0)
         {
@@ -52,7 +62,8 @@ public class DayCycles : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("TransitionScene");
+            endDay = true;
+            timer = 2f;
         }
     }
 
