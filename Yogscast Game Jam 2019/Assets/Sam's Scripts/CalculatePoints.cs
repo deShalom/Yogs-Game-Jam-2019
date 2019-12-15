@@ -9,6 +9,7 @@ public class CalculatePoints : MonoBehaviour
 {
     static int TotalPoints;
     public GameObject Dialog;
+    public GameObject Days;
     public int charalign;
 
     public Text points;
@@ -22,6 +23,8 @@ public class CalculatePoints : MonoBehaviour
     public static bool speedBuy;
     public static bool kickBuy;
     public static bool dayBuy;
+    public static bool speedUsed = false;
+    public static bool dayUsed = false;
 
     void Start()
     {
@@ -92,6 +95,19 @@ public class CalculatePoints : MonoBehaviour
             {
                 extraDText.text = "Sold Out!";
                 extraDButton.interactable = false;
+            }
+        }
+        else
+        {
+            if (speedBuy && !speedUsed)
+            {
+                Days.GetComponent<DayCycles>().nOfViewers++;
+                speedUsed = true;
+            }
+            if (dayBuy && dayUsed)
+            {
+                DayCycles.Days++;
+                dayUsed = true;
             }
         }
     }
