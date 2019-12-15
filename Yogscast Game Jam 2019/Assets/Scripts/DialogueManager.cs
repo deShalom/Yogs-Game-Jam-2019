@@ -41,16 +41,17 @@ public class DialogueManager : MonoBehaviour
             int chanceRange = 50;
             int rng = Random.Range(0, 101);
 
-            if(rng <= chanceRange)
+            if (rng <= chanceRange)
             {
                 isLying = true;
             }
-                } else if (charAlignment == 1)
+        }
+        else if (charAlignment == 1)
         {
             int chanceRange = 25;
             int rng = Random.Range(0, 101);
 
-            if(rng <= chanceRange)
+            if (rng <= chanceRange)
             {
                 isLying = true;
             }
