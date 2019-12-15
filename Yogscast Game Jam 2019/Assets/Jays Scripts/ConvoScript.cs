@@ -177,52 +177,65 @@ public class ConvoScript : MonoBehaviour
         }
     }
 
-    public void KickingFinished()
+    public void KickingFinished(int crit)
     {
         //Resolve conversation
         conversationIsResolved = true;
-        currentPerson.GetComponent<Rigidbody>().AddForce(0f,200f,1000f);
+        if (crit == 1)
+        {
+            currentPerson.GetComponent<Rigidbody>().AddForce(0f, 200f, 1000f);
+        }
+        else
+        {
+            currentPerson.GetComponent<Rigidbody>().AddForce(0f, 200f, 500);
+        }
         CycleConversation();
     }
 
     public void SlapPerson()
     {
-        PlaySound(s_Slap[Random.Range(0, s_Slap.Length)]);
-        //Slap logic
-        var newRanNum = Random.Range(0,3);
-        switch (newRanNum)
+        if (conversationOnGoing)
         {
-            case 0:
-                armAnimator.SetTrigger("slap_1");
-                break;
-            case 1:
-                armAnimator.SetTrigger("slap_2");
-                break;
-            case 2:
-                armAnimator.SetTrigger("slap_3");
-                break;
+            PlaySound(s_Slap[Random.Range(0, s_Slap.Length)]);
+            //Slap logic
+            var newRanNum = Random.Range(0, 3);
+            switch (newRanNum)
+            {
+                case 0:
+                    armAnimator.SetTrigger("slap_1");
+                    break;
+                case 1:
+                    armAnimator.SetTrigger("slap_2");
+                    break;
+                case 2:
+                    armAnimator.SetTrigger("slap_3");
+                    break;
+            }
+
+            animatorOfCurrentPerson.SetTrigger("hit");
+
+            CycleConversation();
         }
-
-        animatorOfCurrentPerson.SetTrigger("hit");
-
-        CycleConversation();
     }
 
     public void Gift()
     {
-        if (dayCycles.nOfPresents > 0)
+        if (conversationOnGoing)
         {
-            //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
-            LaunchPresent();
-            //Gift logic
-            armAnimator.SetTrigger("throw");
-            //Decrement available presents
-            dayCycles.nOfPresents--;
-            UpdatePresentText();
+            if (dayCycles.nOfPresents > 0)
+            {
+                //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
+                LaunchPresent();
+                //Gift logic
+                armAnimator.SetTrigger("throw");
+                //Decrement available presents
+                dayCycles.nOfPresents--;
+                UpdatePresentText();
+            }
+            //Resolve conversation
+            conversationIsResolved = true;
+            CycleConversation();
         }
-        //Resolve conversation
-        conversationIsResolved = true;
-        CycleConversation();
     }
 
     public void QuestionsToggle()
