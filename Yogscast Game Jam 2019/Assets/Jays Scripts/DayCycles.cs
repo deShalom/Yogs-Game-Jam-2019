@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DayCycles : MonoBehaviour
 {
-    public int Days = 12;
+    public static int Days = 12;
     public int nOfViewers = 10;
     public int nOfPresents = 6;
     public int nOfViewersCounter;
@@ -20,7 +20,6 @@ public class DayCycles : MonoBehaviour
 
     void Update()
     {
-        
     }
 
     public void ViewerCycle()
