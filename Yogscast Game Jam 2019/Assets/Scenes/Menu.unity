@@ -120,6 +120,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &137394060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3357525944239722542, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1261963108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &177411385
 GameObject:
   m_ObjectHideFlags: 0
@@ -240,7 +246,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334482039}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
@@ -687,7 +693,7 @@ PrefabInstance:
     - target: {fileID: 3357525944239722542, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1190945979102545273, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
         type: 3}
@@ -852,6 +858,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splashscreenFinished: 0
+  btnStart: {fileID: 334482039}
+  audioMenu: {fileID: 137394060}
 --- !u!4 &1304352014
 Transform:
   m_ObjectHideFlags: 0
@@ -1193,7 +1201,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656980182}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ca71287cafc1f34cbfcf98f03a410f1, type: 3}
   m_Name: 
