@@ -9,7 +9,7 @@ public class ConvoScript : MonoBehaviour
     private string currentMainText;
     //[Header("UI Question Buttons")]
     public Button option1, option2;
-
+    public GameObject calcpoints;
     public float audioSourceVolume;
 
     //[Header("Animators")]
@@ -137,6 +137,7 @@ public class ConvoScript : MonoBehaviour
     {
         if (conversationIsResolved /*&& no of viewings left is != 0*/)
         {
+            calcpoints.GetComponent<CalculatePoints>().UpdatePoints();
             dayCycles.ViewerCycle();
             conversationIsResolved = false;
             conversationOnGoing = false;
@@ -180,6 +181,7 @@ public class ConvoScript : MonoBehaviour
     public void KickingFinished()
     {
         //Resolve conversation
+        calcpoints.GetComponent<CalculatePoints>().Kicked();
         conversationIsResolved = true;
         currentPerson.GetComponent<Rigidbody>().AddForce(0f,200f,1000f);
         CycleConversation();
@@ -219,6 +221,7 @@ public class ConvoScript : MonoBehaviour
             //Decrement available presents
             dayCycles.nOfPresents--;
             UpdatePresentText();
+            calcpoints.GetComponent<CalculatePoints>().Gifted();
         }
         //Resolve conversation
         conversationIsResolved = true;

@@ -6,11 +6,10 @@ using UnityEngine.UI;
 
 public class CalculatePoints : MonoBehaviour
 {
-    int NumberOfBadKidsKicked = 6;
-    int NumberOfGoodKidsGifted = 3;
-    int NumberOfBadKidsGifted = 0;
-    int NumberOfGoodKidsKicked = 1;
     static int TotalPoints;
+    public GameObject Dialog;
+    public int charalign;
+
     public Text points;
     public Text speedText;
     public Button speedButton;
@@ -18,29 +17,27 @@ public class CalculatePoints : MonoBehaviour
     public Button kickButton;
     public Text extraDText;
     public Button extraDButton;
+
     static bool speedBuy = false;
     static bool kickBuy = false;
     static bool dayBuy = false;
 
     void Start()
     {
+        charalign = Dialog.GetComponent<DialogueManager>().charAlignment;
+
         AnyBought();
         UpdatePoints();
     }
 
-    void CalcPoints() //calculates points
+    public void CalcPoints() //calculates points
     {
-        //actual point calculation to be implemented below
-
-        TotalPoints = TotalPoints + (NumberOfBadKidsKicked * 10);
-        TotalPoints = TotalPoints + (NumberOfGoodKidsGifted * 10);
-        TotalPoints = TotalPoints - (NumberOfGoodKidsKicked * 10);
-        TotalPoints = TotalPoints - (NumberOfBadKidsGifted * 10);
+        TotalPoints = TotalPoints + 10;
 
         UpdatePoints();
     }
 
-    void UpdatePoints() //updates point value
+    public void UpdatePoints() //updates point value
     {
         points.text = TotalPoints.ToString();
     }
@@ -98,5 +95,15 @@ public class CalculatePoints : MonoBehaviour
             extraDText.text = "Sold Out!";
             extraDButton.interactable = false;
         }
+    }
+
+    public void Gifted()
+    {
+        TotalPoints = TotalPoints + 10;
+    }
+
+    public void Kicked()
+    {
+        TotalPoints = TotalPoints - 10;
     }
 }
