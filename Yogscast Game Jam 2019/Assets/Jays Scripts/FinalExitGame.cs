@@ -10,6 +10,6 @@ public class FinalExitGame : MonoBehaviour
     //Methods
     public void ExitGame()
     {
-        cc.exitGame();
+        JsCommonCode.exitGame();
     }
 }

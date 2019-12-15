@@ -110,6 +110,7 @@ public class ConvoScript : MonoBehaviour
 
     private void Start()
     {
+        QuestionsToggle();
         currentMainText = "some texttxtxtxttxtxttxttxtxtxtxttxt";
         //StartNewConversation();
         audioSource = GetComponent<AudioSource>();
@@ -135,7 +136,9 @@ public class ConvoScript : MonoBehaviour
         //
         personID = Random.Range(0, characters.Length);
         currentPerson = Instantiate(characters[personID], personSpawner.transform);
-        
+
+        QuestionsToggle();
+
         animatorOfCurrentPerson = currentPerson.GetComponentInChildren<Animator>();
         doorAnimator.SetTrigger("door_open");
         conversationOnGoing = true;

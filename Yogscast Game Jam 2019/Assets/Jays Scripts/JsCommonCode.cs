@@ -78,7 +78,7 @@ public class JsCommonCode : MonoBehaviour
     }
 
     //Exit Game
-    public void exitGame()
+    public static void exitGame()
     {
         Application.Quit();
     }
