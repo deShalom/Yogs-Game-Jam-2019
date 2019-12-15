@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class DialogueManager : MonoBehaviour
 {
     public int charAlignment, charID, reasonID;
-    public string contents, reasonTxt, answerContents;
+    public string contents, reasonTxt, answerContents, answerTxt;
     public string[] reason, questions, answers;
-    public int[] questionID;
+    public int[] answerID;
     public TextAsset[] ReasonFile, AnswerFile, SlapFile, KickFile;
     public bool isLying;
     //public Text
@@ -70,12 +70,12 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "What breed of dog was it?";
                         if (!isLying)
                         {
-                            questionID[0] = 0;
-                            questionID[1] = 2;
+                            answerID[0] = 0;
+                            answerID[1] = 2;
                         }else if (isLying)
                         {
-                            questionID[0] = 1;
-                            questionID[1] = 3;
+                            answerID[0] = 1;
+                            answerID[1] = 3;
                         }
                         break;
                     case 1:
@@ -83,13 +83,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "What’s your neighbour’s name?";
                         if (!isLying)
                         {
-                            questionID[0] = 4;
-                            questionID[1] = 6;
+                            answerID[0] = 4;
+                            answerID[1] = 6;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 5;
-                            questionID[1] = 7;
+                            answerID[0] = 5;
+                            answerID[1] = 7;
                         }
                         break;
                     case 2:
@@ -97,13 +97,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "What were they talking about?";
                         if (!isLying)
                         {
-                            questionID[0] = 8;
-                            questionID[1] = 10;
+                            answerID[0] = 8;
+                            answerID[1] = 10;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 9;
-                            questionID[1] = 11;
+                            answerID[0] = 9;
+                            answerID[1] = 11;
                         }
                         break;
                     case 3:
@@ -111,13 +111,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "That’s gross, dude. Do your dishes";
                         if (!isLying)
                         {
-                            questionID[0] = 12;
-                            questionID[1] = 14;
+                            answerID[0] = 12;
+                            answerID[1] = 14;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 13;
-                            questionID[1] = 15;
+                            answerID[0] = 13;
+                            answerID[1] = 15;
                         }
                         break;
                     case 4:
@@ -125,13 +125,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "What did they say after?";
                         if (!isLying)
                         {
-                            questionID[0] = 16;
-                            questionID[1] = 18;
+                            answerID[0] = 16;
+                            answerID[1] = 18;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 17;
-                            questionID[1] = 19;
+                            answerID[0] = 17;
+                            answerID[1] = 19;
                         }
                         break;
                 }
@@ -145,13 +145,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "Where did you put it?";
                         if (!isLying)
                         {
-                            questionID[0] = 0;
-                            questionID[1] = 2;
+                            answerID[0] = 0;
+                            answerID[1] = 2;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 1;
-                            questionID[1] = 3;
+                            answerID[0] = 1;
+                            answerID[1] = 3;
                         }
                         break;
                     case 1:
@@ -159,13 +159,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "Who was it?";
                         if (!isLying)
                         {
-                            questionID[0] = 4;
-                            questionID[1] = 6;
+                            answerID[0] = 4;
+                            answerID[1] = 6;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 5;
-                            questionID[1] = 7;
+                            answerID[0] = 5;
+                            answerID[1] = 7;
                         }
                         break;
                     case 2:
@@ -173,13 +173,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "What did she serve to you?";
                         if (!isLying)
                         {
-                            questionID[0] = 8;
-                            questionID[1] = 10;
+                            answerID[0] = 8;
+                            answerID[1] = 10;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 9;
-                            questionID[1] = 11;
+                            answerID[0] = 9;
+                            answerID[1] = 11;
                         }
                         break;
                     case 3:
@@ -187,13 +187,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "What did you say to them?";
                         if (!isLying)
                         {
-                            questionID[0] = 12;
-                            questionID[1] = 14;
+                            answerID[0] = 12;
+                            answerID[1] = 14;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 13;
-                            questionID[1] = 15;
+                            answerID[0] = 13;
+                            answerID[1] = 15;
                         }
                         break;
                     case 4:
@@ -201,13 +201,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "What did you do?";
                         if (!isLying)
                         {
-                            questionID[0] = 16;
-                            questionID[1] = 18;
+                            answerID[0] = 16;
+                            answerID[1] = 18;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 17;
-                            questionID[1] = 19;
+                            answerID[0] = 17;
+                            answerID[1] = 19;
                         }
                         break;
                 }
@@ -221,13 +221,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "What was her name?";
                         if (!isLying)
                         {
-                            questionID[0] = 0;
-                            questionID[1] = 2;
+                            answerID[0] = 0;
+                            answerID[1] = 2;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 1;
-                            questionID[1] = 3;
+                            answerID[0] = 1;
+                            answerID[1] = 3;
                         }
                         break;
                     case 1:
@@ -235,13 +235,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "When did you do it?";
                         if (!isLying)
                         {
-                            questionID[0] = 4;
-                            questionID[1] = 6;
+                            answerID[0] = 4;
+                            answerID[1] = 6;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 5;
-                            questionID[1] = 7;
+                            answerID[0] = 5;
+                            answerID[1] = 7;
                         }
                         break;
                     case 2:
@@ -249,13 +249,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "How much did you donate?";
                         if (!isLying)
                         {
-                            questionID[0] = 8;
-                            questionID[1] = 10;
+                            answerID[0] = 8;
+                            answerID[1] = 10;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 9;
-                            questionID[1] = 11;
+                            answerID[0] = 9;
+                            answerID[1] = 11;
                         }
                         break;
                     case 3:
@@ -263,13 +263,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "Can I see your Donor Card?";
                         if (!isLying)
                         {
-                            questionID[0] = 12;
-                            questionID[1] = 14;
+                            answerID[0] = 12;
+                            answerID[1] = 14;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 13;
-                            questionID[1] = 15;
+                            answerID[0] = 13;
+                            answerID[1] = 15;
                         }
                         break;
                     case 4:
@@ -277,13 +277,13 @@ public class DialogueManager : MonoBehaviour
                         questions[1] = "Where was he located?";
                         if (!isLying)
                         {
-                            questionID[0] = 16;
-                            questionID[1] = 18;
+                            answerID[0] = 16;
+                            answerID[1] = 18;
                         }
                         else if (isLying)
                         {
-                            questionID[0] = 17;
-                            questionID[1] = 19;
+                            answerID[0] = 17;
+                            answerID[1] = 19;
                         }
                         break;
                 }
@@ -295,7 +295,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void GetAnswers()
+    public void GetAnswers(int ID)
     {
         answerFile = new StreamReader(Application.dataPath + "/Dialog Resources/" + AnswerFile[charAlignment].name + ".txt");
         answerContents = answerFile.ReadToEnd();
@@ -303,6 +303,7 @@ public class DialogueManager : MonoBehaviour
         answerFile.Close();
 
         answers = answerContents.Split("\n"[0]);
+        answerTxt = answers[answerID[ID]]; 
 
     }
 }
