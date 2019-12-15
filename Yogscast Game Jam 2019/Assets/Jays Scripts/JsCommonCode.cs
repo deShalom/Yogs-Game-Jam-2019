@@ -44,7 +44,7 @@ public class JsCommonCode : MonoBehaviour
     }
 
     //Soundtrack
-    void soundTrack()
+    public void soundTrack()
     {
         if (!music.isPlaying)
         {
@@ -55,7 +55,7 @@ public class JsCommonCode : MonoBehaviour
     }
 
     //Sound Effects Player
-    void soundEffect(int eClip)
+    public void soundEffect(int eClip)
     {
         sEffects.clip = SoundEffectClips[eClip];
     }
