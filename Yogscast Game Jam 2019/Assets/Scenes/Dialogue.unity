@@ -831,7 +831,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8911069a37784d4196003a3f748f6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Days: 12
   nOfViewers: 10
   nOfPresents: 6
   nOfViewersCounter: 10
@@ -1115,7 +1114,78 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: questions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: questionID.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: ReasonFile.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: AnswerFile.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: SlapFile.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: KickFile.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: ReasonFile.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 6c768d5d012972b43b1f6f06331397a0, type: 3}
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: ReasonFile.Array.data[1]
+      value: 
+      objectReference: {fileID: 4900000, guid: bd4f04ea9f18bd94aa92c70670288f97, type: 3}
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: ReasonFile.Array.data[2]
+      value: 
+      objectReference: {fileID: 4900000, guid: 2a49667ec3632c747a6adf2faa4bf302, type: 3}
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: AnswerFile.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: 848accfbb2749b544ad92ce14c332870, type: 3}
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: AnswerFile.Array.data[1]
+      value: 
+      objectReference: {fileID: 4900000, guid: 4c9f623e6c55180429869c0be8ab68b4, type: 3}
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: AnswerFile.Array.data[2]
+      value: 
+      objectReference: {fileID: 4900000, guid: 29a926d9400ad6444af81686725e815e, type: 3}
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: SlapFile.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: ace0249538eb489439553529e8abf459, type: 3}
+    - target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+        type: 3}
+      propertyPath: KickFile.Array.data[0]
+      value: 
+      objectReference: {fileID: 4900000, guid: ca2c2999f46e79149b4348611d45063d, type: 3}
+    m_RemovedComponents:
+    - {fileID: 5141110782603969714, guid: ad22e3e4eb3759a44b12020f06053638, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ad22e3e4eb3759a44b12020f06053638, type: 3}
 --- !u!1 &705072486
 GameObject:
@@ -1518,6 +1588,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 390420284}
         m_MethodName: QuestionsToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 603390413327480243, guid: ad22e3e4eb3759a44b12020f06053638,
+          type: 3}
+        m_MethodName: GetQuestions
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2028,6 +2110,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Santa_L_Leg
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 4b6de86dcee70bd46ab33445078a3cee,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 11ace43b5dc296d47bc1a2e3084dd728, type: 2}
     - target: {fileID: -4216859302048453862, guid: 4b6de86dcee70bd46ab33445078a3cee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2083,11 +2170,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 88.449005
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 4b6de86dcee70bd46ab33445078a3cee,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 11ace43b5dc296d47bc1a2e3084dd728, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b6de86dcee70bd46ab33445078a3cee, type: 3}
 --- !u!1 &1331344014
@@ -2616,6 +2698,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SK_Santa_L_Arm
       objectReference: {fileID: 0}
+    - target: {fileID: -6057140222963153312, guid: 1e21c7024db9f884cab4d7acac9c89eb,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 955f6319ce00c244eae9f69f3f0a00bf, type: 2}
     - target: {fileID: -4216859302048453862, guid: 1e21c7024db9f884cab4d7acac9c89eb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2671,11 +2758,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -6057140222963153312, guid: 1e21c7024db9f884cab4d7acac9c89eb,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 955f6319ce00c244eae9f69f3f0a00bf, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e21c7024db9f884cab4d7acac9c89eb, type: 3}
 --- !u!1001 &1836886383
