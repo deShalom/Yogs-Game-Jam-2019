@@ -83,6 +83,12 @@ public class JsCommonCode : MonoBehaviour
         Application.Quit();
     }
 
+    public void exitGameNonStatic()
+    {
+        Application.Quit();
+        exitGame();
+    }
+
     //Menu Opening
     public void openMenuKey(GameObject menu)
     {
