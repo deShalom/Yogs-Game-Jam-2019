@@ -5,6 +5,7 @@ using UnityEngine;
 public class DayCycles : MonoBehaviour
 {
     public int Days = 12;
+    public static int statDays;
     public int nOfViewers = 10;
     public int nOfPresents = 6;
     public int nOfViewersCounter;
@@ -17,7 +18,7 @@ public class DayCycles : MonoBehaviour
 
     void Update()
     {
-        
+        statDays = Days;
     }
 
     public void ViewerCycle()
@@ -63,5 +64,6 @@ public class DayCycles : MonoBehaviour
         //Inster code here to complete a viewing.
         ViewerCycle();
     }
+
 }
 //All code written by Jay Underwood (deShalom).
