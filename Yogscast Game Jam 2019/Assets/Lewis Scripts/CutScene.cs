@@ -64,7 +64,7 @@ public class CutScene : MonoBehaviour
     {
 
         if ((Input.GetMouseButtonDown(0)) & (textshowing))
-            sl.loadScene("Dialogue");
+            sl.loadScene("SecondCutscene");
         
     }
 }

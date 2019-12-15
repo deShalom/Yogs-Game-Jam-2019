@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dialogue.unity
     guid: 73503fa4ab68ab3488d759c581a361f1
+  - enabled: 1
+    path: Assets/Scenes/SecondCutscene.unity
+    guid: 4337ca3cf02c6c040a0c3a497c12794d
   m_configObjects: {}
