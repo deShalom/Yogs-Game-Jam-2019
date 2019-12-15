@@ -21,21 +21,25 @@ public class ConvoScript : MonoBehaviour
     public GameObject questionsPanel, dice;
 
     private DayCycles dayCycles;
+    public DialogueManager dialogueManager;
 
     [SerializeField] public AudioClip[] s_Slap, s_Kick, s_Gift;
     private AudioSource audioSource;
 
 
+    Animator animatorOfCurrentPerson;
+    GameObject currentPerson;
 
     //Prefabs
-    public GameObject launchPoint, holdingPoint;
+    public GameObject launchPoint, holdingPoint, personSpawner;
     [Header("Prefabs")]
     public GameObject[] presents;
     public GameObject[] weapons;
+    public GameObject[] characters;
     public int testWeapon;
 
     private bool conversationIsResolved = false, waitingForDiceRoll = false, conversationOnGoing = false;
-    private float diceTimer;
+    private float diceTimer, timer;
     public bool diceHasRolled = false;
 
     string kickAnimation;
@@ -65,6 +69,16 @@ public class ConvoScript : MonoBehaviour
             diceTimer = 0f;
             diceText.gameObject.SetActive(false);
             dice.SetActive(false);
+        }
+
+        if(timer > 0f)
+        {
+            timer -= Time.deltaTime;
+        }
+        else if(timer != 0f)
+        {
+            timer = 0f;
+            NewViewingReady();
         }
 
         //Code for click raycasts (give button / door handle)
@@ -106,10 +120,14 @@ public class ConvoScript : MonoBehaviour
         //Show character
         //Set text and convo options
         //currentMainText = text from file;
+        dialogueManager.GetReason();
+        currentMainText = dialogueManager.reasonTxt;
         questionOption1.text = conversationOptions[0];
         questionOption2.text = conversationOptions[1];
         currentDisplayedText.text = currentMainText;
         //
+        currentPerson = Instantiate(characters[Random.Range(0, characters.Length)], personSpawner.transform);
+        animatorOfCurrentPerson = currentPerson.GetComponentInChildren<Animator>();
         doorAnimator.SetTrigger("door_open");
         conversationOnGoing = true;
     }
@@ -123,6 +141,8 @@ public class ConvoScript : MonoBehaviour
             conversationIsResolved = false;
             conversationOnGoing = false;
             doorAnimator.SetTrigger("door_close");
+            //Set timer for next viewing
+            timer = 2f;
         }
         else
         {
@@ -133,24 +153,35 @@ public class ConvoScript : MonoBehaviour
         }
     }
 
+    void NewViewingReady()
+    {
+        doorAnimator.SetTrigger("door_knock");
+    }
+
     public void KickPerson()
     {
-
-        //Kick logic
-        //Roll d20 for damage
-        var newRoll = RollD20();
-        diceText.text = newRoll.ToString();
-        if(newRoll > 15)
+        if (diceTimer == 0 && conversationOnGoing)
         {
-            kickAnimation = "kick_2";
+            //Kick logic
+            //Roll d20 for damage
+            var newRoll = RollD20();
+            diceText.text = newRoll.ToString();
+            if (newRoll > 15)
+            {
+                kickAnimation = "kick_2";
+            }
+            else
+            {
+                kickAnimation = "kick_1";
+            }
         }
-        else
-        {
-            kickAnimation = "kick_1";
-        }
+    }
 
+    public void KickingFinished()
+    {
         //Resolve conversation
         conversationIsResolved = true;
+        currentPerson.GetComponent<Rigidbody>().AddForce(0f,200f,1000f);
         CycleConversation();
     }
 
@@ -171,6 +202,8 @@ public class ConvoScript : MonoBehaviour
                 armAnimator.SetTrigger("slap_3");
                 break;
         }
+
+        animatorOfCurrentPerson.SetTrigger("hit");
 
         CycleConversation();
     }
