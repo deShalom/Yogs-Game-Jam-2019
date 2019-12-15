@@ -1337,7 +1337,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7172279839420929598}
         m_MethodName: closeMenu
         m_Mode: 1
         m_Arguments:
