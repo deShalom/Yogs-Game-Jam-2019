@@ -22,6 +22,7 @@ public class ConvoScript : MonoBehaviour
 
     private DayCycles dayCycles;
     public DialogueManager dialogueManager;
+    public CalculatePoints calculatePoints;
 
     [SerializeField] public AudioClip[] s_Slap, s_Kick, s_Gift;
     private AudioSource audioSource;
@@ -176,8 +177,12 @@ public class ConvoScript : MonoBehaviour
             //Kick logic
             //Roll d20 for damage
             var newRoll = RollD20();
+            if (CalculatePoints.kickBuy)
+            {
+                newRoll += 5;
+            }
             diceText.text = newRoll.ToString();
-            if (newRoll > 15)
+            if (newRoll > 20)
             {
                 kickAnimation = "kick_2";
             }

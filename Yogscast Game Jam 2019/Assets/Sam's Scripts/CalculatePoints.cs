@@ -18,9 +18,9 @@ public class CalculatePoints : MonoBehaviour
     public Text extraDText;
     public Button extraDButton;
 
-    static bool speedBuy = false;
-    static bool kickBuy = false;
-    static bool dayBuy = false;
+    public static bool speedBuy = false;
+    public static bool kickBuy = false;
+    public static bool dayBuy = false;
 
     void Start()
     {

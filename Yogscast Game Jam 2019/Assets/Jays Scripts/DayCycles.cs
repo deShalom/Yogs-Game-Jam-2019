@@ -25,15 +25,15 @@ public class DayCycles : MonoBehaviour
 
     public void ViewerCycle()
     {
-        while(nOfViewersCounter >= 1)
+        if(nOfViewersCounter >= 1)
         {
             //Insert code here to execute viewer.
             LaunchViewing();
-            if (nOfViewers == 0)
-            {
-                DayComplete();
-                break;
-            }
+
+        }
+        else if (nOfViewers == 0)
+        {
+            DayComplete();
         }
     }
 
