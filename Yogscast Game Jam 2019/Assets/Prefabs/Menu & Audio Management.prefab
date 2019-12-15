@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3357525944239722542
+--- !u!1 &2098495683636004333
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,68 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1190945979102545273}
-  - component: {fileID: 7172279839420929598}
-  m_Layer: 0
-  m_Name: Menu & Audio Management
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1190945979102545273
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3357525944239722542}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 33.280895, y: 322.94028, z: -81.390625}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8752934518333799939}
-  - {fileID: 8752934517655308510}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7172279839420929598
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3357525944239722542}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884ef3d22a455b24f9a76d29bed68c72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scnName: 
-  eSlider: {fileID: 8752934517467443737}
-  mSlider: {fileID: 8752934519078489206}
-  music: {fileID: 8752934519201400951}
-  sEffects: {fileID: 8752934518084229638}
-  sEffects2: {fileID: 2116335397038575293}
-  SoundtrackClips:
-  - {fileID: 8300000, guid: eee1fcc7cddb7904ab5f1baf83170b2a, type: 3}
-  - {fileID: 8300000, guid: 3a0b11b25d259ba4d96ae59dbb8aa5b9, type: 3}
-  - {fileID: 8300000, guid: e24465007e1c3614e9bc83bc05da2b29, type: 3}
-  - {fileID: 8300000, guid: 410fa970c8719a04296ef3b661363cfb, type: 3}
-  SoundEffectClips: []
-  AudioMenu: {fileID: 8752934517655308506}
-  ExitGame: {fileID: 8752934517746858377}
-  CloseMenu: {fileID: 8752934518640306495}
---- !u!1 &5735093308345735896
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8334267678291714729}
-  - component: {fileID: 2116335397038575293}
+  - component: {fileID: 628982137027031633}
+  - component: {fileID: 2928144523351608570}
   m_Layer: 0
   m_Name: Effects source 2
   m_TagString: Untagged
@@ -77,13 +17,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8334267678291714729
+--- !u!4 &628982137027031633
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5735093308345735896}
+  m_GameObject: {fileID: 2098495683636004333}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -91,13 +31,13 @@ Transform:
   m_Father: {fileID: 8752934518333799939}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &2116335397038575293
+--- !u!82 &2928144523351608570
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5735093308345735896}
+  m_GameObject: {fileID: 2098495683636004333}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -187,6 +127,68 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &3357525944239722542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1190945979102545273}
+  - component: {fileID: 7172279839420929598}
+  m_Layer: 0
+  m_Name: Menu & Audio Management
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1190945979102545273
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3357525944239722542}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 33.280895, y: 322.94028, z: -81.390625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8752934518333799939}
+  - {fileID: 8752934517655308510}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7172279839420929598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3357525944239722542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 884ef3d22a455b24f9a76d29bed68c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scnName: 
+  eSlider: {fileID: 8752934517467443737}
+  mSlider: {fileID: 8752934519078489206}
+  music: {fileID: 8752934519201400951}
+  sEffects: {fileID: 8752934518084229638}
+  sEffects2: {fileID: 2928144523351608570}
+  SoundtrackClips:
+  - {fileID: 8300000, guid: eee1fcc7cddb7904ab5f1baf83170b2a, type: 3}
+  - {fileID: 8300000, guid: 3a0b11b25d259ba4d96ae59dbb8aa5b9, type: 3}
+  - {fileID: 8300000, guid: e24465007e1c3614e9bc83bc05da2b29, type: 3}
+  - {fileID: 8300000, guid: 410fa970c8719a04296ef3b661363cfb, type: 3}
+  SoundEffectClips:
+  - {fileID: 8300000, guid: 57a2d50d819de14499021a2d897f94f7, type: 3}
+  - {fileID: 8300000, guid: ff5203bbbcb49a842affe6542ab528eb, type: 3}
+  AudioMenu: {fileID: 8752934517655308506}
+  ExitGame: {fileID: 8752934517746858377}
+  CloseMenu: {fileID: 8752934518640306495}
 --- !u!1 &8752934517292083215
 GameObject:
   m_ObjectHideFlags: 0
@@ -204,7 +206,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8752934517292083248
 RectTransform:
   m_ObjectHideFlags: 0
@@ -336,7 +338,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -879,7 +881,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7172279839420929598}
+      - m_Target: {fileID: 0}
         m_MethodName: exitGame
         m_Mode: 1
         m_Arguments:
@@ -1199,7 +1201,7 @@ Transform:
   m_Children:
   - {fileID: 8752934519201400950}
   - {fileID: 8752934518084229637}
-  - {fileID: 8334267678291714729}
+  - {fileID: 628982137027031633}
   m_Father: {fileID: 1190945979102545273}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1322,7 +1324,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7172279839420929598}
+      - m_Target: {fileID: 0}
         m_MethodName: closeMenu
         m_Mode: 1
         m_Arguments:
@@ -1367,8 +1369,8 @@ RectTransform:
   m_Father: {fileID: 8752934518051261212}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1534,7 +1536,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1608,8 +1610,8 @@ RectTransform:
   m_Father: {fileID: 8752934517633850278}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
