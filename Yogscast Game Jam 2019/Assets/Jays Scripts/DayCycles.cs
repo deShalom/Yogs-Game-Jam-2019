@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class DayCycles : MonoBehaviour
 {
-    public static int Days = 2;
-    public static int nOfViewers = 10;
+    public static int Days = 12;
+    public static int nOfViewers = 5;
     public static int nOfPresents = 6;
     public int nOfViewersCounter;
     private bool viewingDone, endDay = false;
