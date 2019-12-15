@@ -86,11 +86,11 @@ public class JsCommonCode : MonoBehaviour
     //Menu Opening
     public void openMenuKey(GameObject menu)
     {
-        if (Input.GetKeyDown("escape") && menu.activeInHierarchy)
+        if (Input.GetKeyDown(KeyCode.Escape) && menu.activeInHierarchy)
         {
             menu.SetActive(false);
         }
-        else if (Input.GetKeyDown("escape") && menu.activeInHierarchy == false)
+        else if (Input.GetKeyDown(KeyCode.Escape) && menu.activeInHierarchy == false)
         {
             menu.SetActive(true);
         }
