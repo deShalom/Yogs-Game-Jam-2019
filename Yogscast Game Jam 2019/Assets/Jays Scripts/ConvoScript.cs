@@ -171,6 +171,7 @@ public class ConvoScript : MonoBehaviour
     void NewViewingReady()
     {
         doorAnimator.SetTrigger("door_knock");
+        jsCommonCode.soundEffect(1);
     }
 
     public void KickPerson()
@@ -246,7 +247,7 @@ public class ConvoScript : MonoBehaviour
             //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
             //LaunchPresent();
             //Gift logic
-            calcpoints.GetComponent<CalculatePoints>().Gifted();
+            
             if (dayCycles.nOfPresents > 0)
             {
                 //PlaySound(s_Gift[Random.Range(0, s_Gift.Length)]);
@@ -256,6 +257,7 @@ public class ConvoScript : MonoBehaviour
                 //Decrement available presents
                 dayCycles.nOfPresents--;
                 UpdatePresentText();
+                calcpoints.GetComponent<CalculatePoints>().Gifted();
             }
             //Resolve conversation
             conversationIsResolved = true;
@@ -302,6 +304,7 @@ public class ConvoScript : MonoBehaviour
         dice.SetActive(true);
         dice.GetComponent<Animation>().Play();
         waitingForDiceRoll = true;
+        jsCommonCode.soundEffect(0);
         return Random.Range(1, 21);
     }
 

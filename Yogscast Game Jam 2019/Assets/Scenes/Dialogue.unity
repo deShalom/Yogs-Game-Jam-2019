@@ -1537,10 +1537,10 @@ RectTransform:
   m_Father: {fileID: 2144601231}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0.0000076294, y: 303.25}
-  m_SizeDelta: {x: 203.88, y: 169.09}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.0000076294, y: -85}
+  m_SizeDelta: {x: 203.88, y: 169.08997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &854307434
 MonoBehaviour:
@@ -2250,10 +2250,10 @@ RectTransform:
   m_Father: {fileID: 2144601231}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -203.88004, y: 389}
-  m_SizeDelta: {x: 203.88, y: 169.1}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -203.88004, y: -151}
+  m_SizeDelta: {x: 203.88, y: 169.09998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1439630772
 MonoBehaviour:
@@ -2465,6 +2465,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu & Audio Management
       objectReference: {fileID: 0}
+    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+        type: 3}
+      propertyPath: SoundEffectClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+        type: 3}
+      propertyPath: SoundEffectClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 57a2d50d819de14499021a2d897f94f7, type: 3}
+    - target: {fileID: 7172279839420929598, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
+        type: 3}
+      propertyPath: SoundEffectClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: ff5203bbbcb49a842affe6542ab528eb, type: 3}
     - target: {fileID: 8752934517655308506, guid: 0aeeab78088a26b4fbdde6d097f8c93b,
         type: 3}
       propertyPath: m_IsActive
@@ -3075,10 +3090,10 @@ RectTransform:
   m_Father: {fileID: 2144601231}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0}
-  m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 203.88, y: 389}
-  m_SizeDelta: {x: 203.88, y: 169.1}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 203.88, y: -151.00006}
+  m_SizeDelta: {x: 203.88, y: 169.09998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1987745056
 MonoBehaviour:
