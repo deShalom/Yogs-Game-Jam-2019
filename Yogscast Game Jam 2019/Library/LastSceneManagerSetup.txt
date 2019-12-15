@@ -1,9 +1,5 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Scenes/Eric's Test Scene.unity
-=======
-- path: Assets/Scenes/Jays Test Scene.unity
->>>>>>> master
+- path: Assets/Scenes/Menu.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
