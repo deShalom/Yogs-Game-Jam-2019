@@ -171,6 +171,7 @@ public class ConvoScript : MonoBehaviour
     void NewViewingReady()
     {
         doorAnimator.SetTrigger("door_knock");
+        jsCommonCode.soundEffect(1);
     }
 
     public void KickPerson()
@@ -303,6 +304,7 @@ public class ConvoScript : MonoBehaviour
         dice.SetActive(true);
         dice.GetComponent<Animation>().Play();
         waitingForDiceRoll = true;
+        jsCommonCode.soundEffect(0);
         return Random.Range(1, 21);
     }
 
