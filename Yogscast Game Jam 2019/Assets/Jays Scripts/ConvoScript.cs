@@ -116,8 +116,7 @@ public class ConvoScript : MonoBehaviour
         audioSource.volume = jsCommonCode.sEffects.volume;
         dayCycles = GetComponent<DayCycles>();
         UpdatePresentText();
-        jsCommonCode.soundTrack();
-        //Instantiate(weapons[testWeapon], holdingPoint.transform);
+        Instantiate(weapons[testWeapon], holdingPoint.transform);
     }
 
     public void StartNewConversation()
@@ -128,9 +127,8 @@ public class ConvoScript : MonoBehaviour
         //currentMainText = text from file;
         dialogueManager.GetReason();
         currentMainText = dialogueManager.reasonTxt;
-        dialogueManager.GetQuestions();
-        questionOption1.text = dialogueManager.questions[0];
-        questionOption2.text = dialogueManager.questions[1];
+        questionOption1.text = conversationOptions[0];
+        questionOption2.text = conversationOptions[1];
         currentDisplayedText.text = currentMainText;
         //
         personID = Random.Range(0, characters.Length);
@@ -188,11 +186,8 @@ public class ConvoScript : MonoBehaviour
         else
         {
             //Update conversation
-            //dialogueManager.GetAnswers();
-            currentMainText = dialogueManager.answerTxt;
-            dialogueManager.GetQuestions();
-            questionOption1.text = dialogueManager.questions[0];
-            questionOption2.text = dialogueManager.questions[1];
+            questionOption1.text = conversationOptions[0];
+            questionOption2.text = conversationOptions[1];
             currentDisplayedText.text = currentMainText;
         }
 
@@ -312,12 +307,10 @@ public class ConvoScript : MonoBehaviour
         if (question == 1)
         {
             Debug.Log("Asked question 1");
-            dialogueManager.GetAnswers(0);
         }
-        if (question == 2)
+        if(question == 2)
         {
             Debug.Log("Asked question 2");
-            dialogueManager.GetAnswers(1);
         }
 
         QuestionsToggle();
