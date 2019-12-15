@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DayCycles : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class DayCycles : MonoBehaviour
             LaunchViewing();
             nOfViewersCounter--;
         }
-        else if (nOfViewers == 0)
+        else if (nOfViewersCounter == 0)
         {
             DayComplete();
         }
@@ -48,6 +49,10 @@ public class DayCycles : MonoBehaviour
         {
             //Execute game over code here.
 
+        }
+        else
+        {
+            SceneManager.LoadScene("TransitionScene");
         }
     }
 
