@@ -14,9 +14,9 @@ public class AnimationEventHandler : MonoBehaviour
     {
         convoScript.diceHasRolled = true;
     }
-    public void FinishedKicking()
+    public void FinishedKicking(int crit)
     {
         Debug.Log("Finished kicking");
-        convoScript.KickingFinished();
+        convoScript.KickingFinished(crit);
     }
 }
