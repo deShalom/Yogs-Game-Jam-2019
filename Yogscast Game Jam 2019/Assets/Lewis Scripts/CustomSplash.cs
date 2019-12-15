@@ -10,11 +10,13 @@ public class CustomSplash : MonoBehaviour
     [SerializeField]
     private GameObject btnStart, audioMenu;
     private bool hasMenuEnabled;
+    private JsCommonCode am;
+    
 
 
     IEnumerator Start()
     {
-        
+        am = audioMenu.GetComponent<JsCommonCode>();
         hasMenuEnabled = false;
         splashscreenFinished = false;
         SplashScreen.Begin();
@@ -32,9 +34,8 @@ public class CustomSplash : MonoBehaviour
     {
         if ((splashscreenFinished) & (hasMenuEnabled))
         {
-            print("do i get here");
             btnStart.GetComponent<Button>().enabled = true;
-            audioMenu.SetActive(true);
+            am.soundTrack();
 
         }
     }
