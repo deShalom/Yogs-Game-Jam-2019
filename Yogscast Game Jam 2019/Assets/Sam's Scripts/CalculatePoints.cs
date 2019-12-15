@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class CalculatePoints : MonoBehaviour
@@ -18,9 +19,9 @@ public class CalculatePoints : MonoBehaviour
     public Text extraDText;
     public Button extraDButton;
 
-    public static bool speedBuy = false;
-    public static bool kickBuy = false;
-    public static bool dayBuy = false;
+    public static bool speedBuy;
+    public static bool kickBuy;
+    public static bool dayBuy;
 
     void Start()
     {
@@ -44,7 +45,7 @@ public class CalculatePoints : MonoBehaviour
         {
             speedText.text = "Sold Out!";
             speedButton.interactable = false;
-            TotalPoints -= 30;
+            TotalPoints = TotalPoints - 30;
             speedBuy = true;
             UpdatePoints();
         }
@@ -56,7 +57,7 @@ public class CalculatePoints : MonoBehaviour
         {
             kickText.text = "Sold Out!";
             kickButton.interactable = false;
-            TotalPoints -= 60;
+            TotalPoints = TotalPoints - 60;
             kickBuy = true;
             UpdatePoints();
         }
@@ -68,7 +69,7 @@ public class CalculatePoints : MonoBehaviour
         {
             extraDText.text = "Sold Out!";
             extraDButton.interactable = false;
-            TotalPoints -= 120;
+            TotalPoints = TotalPoints - 120;
             dayBuy = true;
             UpdatePoints();
         }
@@ -76,20 +77,22 @@ public class CalculatePoints : MonoBehaviour
 
     void AnyBought() //checks to see what power-ups have already been purchased
     {
-        if (speedBuy)
-        {
-            speedText.text = "Sold Out!";
-            speedButton.interactable = false;
-        }
-        if (kickBuy)
-        {
-            kickText.text = "Sold Out!";
-            kickButton.interactable = false;
-        }
-        if (dayBuy)
-        {
-            extraDText.text = "Sold Out!";
-            extraDButton.interactable = false;
+        if(SceneManager.GetActiveScene().name == "UpgradesScene") { 
+            if (speedBuy)
+            {
+                speedText.text = "Sold Out!";
+                speedButton.interactable = false;
+            }
+            if (kickBuy)
+            {
+                kickText.text = "Sold Out!";
+                kickButton.interactable = false;
+            }
+            if (dayBuy)
+            {
+                extraDText.text = "Sold Out!";
+                extraDButton.interactable = false;
+            }
         }
     }
 
@@ -98,16 +101,19 @@ public class CalculatePoints : MonoBehaviour
         if (charalign == 2)
         {
             TotalPoints = TotalPoints + 10;
+            UpdatePoints();
         }
 
         if (charalign == 1)
         {
             TotalPoints = TotalPoints + 5;
+            UpdatePoints();
         }
 
         else
         {
             TotalPoints = TotalPoints - 5;
+            UpdatePoints();
         }
     }
 
@@ -116,16 +122,19 @@ public class CalculatePoints : MonoBehaviour
         if (charalign == 2)
         {
             TotalPoints = TotalPoints - 5;
+            UpdatePoints();
         }
 
         if (charalign == 1)
         {
             TotalPoints = TotalPoints + 0;
+            UpdatePoints();
         }
 
         else
         {
             TotalPoints = TotalPoints + 10;
+            UpdatePoints();
         }
     }
 }
