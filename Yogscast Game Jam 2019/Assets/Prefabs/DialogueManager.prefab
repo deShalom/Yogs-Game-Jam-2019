@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 603390413327480244}
   - component: {fileID: 603390413327480243}
-  - component: {fileID: 5141110782603969714}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -45,23 +44,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charAlignment: 0
-  reason: 
-  dialogueFile:
+  charID: 0
+  reasonID: 0
+  contents: 
+  reasonTxt: 
+  answerContents: 
+  answerTxt: 
+  reason: []
+  questions:
+  - 
+  - 
+  answers: []
+  answerID: 0000000000000000
+  ReasonFile:
   - {fileID: 4900000, guid: 6c768d5d012972b43b1f6f06331397a0, type: 3}
   - {fileID: 4900000, guid: bd4f04ea9f18bd94aa92c70670288f97, type: 3}
   - {fileID: 4900000, guid: 2a49667ec3632c747a6adf2faa4bf302, type: 3}
---- !u!114 &5141110782603969714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 603390413327480245}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea442dc96f0494441911057e2a3f2f0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: 
-    sentences: []
+  AnswerFile:
+  - {fileID: 4900000, guid: 848accfbb2749b544ad92ce14c332870, type: 3}
+  - {fileID: 4900000, guid: 4c9f623e6c55180429869c0be8ab68b4, type: 3}
+  - {fileID: 4900000, guid: 29a926d9400ad6444af81686725e815e, type: 3}
+  SlapFile:
+  - {fileID: 4900000, guid: ace0249538eb489439553529e8abf459, type: 3}
+  KickFile:
+  - {fileID: 4900000, guid: ca2c2999f46e79149b4348611d45063d, type: 3}
+  isLying: 0
